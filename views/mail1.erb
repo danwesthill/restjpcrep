@@ -1,0 +1,8 @@
+﻿<p>Data: <%= Time.now.localtime("-03:00").strftime("%d/%m/%y") %>
+<BR>
+<BR>
+Nome: <%= @mail[0] %><BR>
+Telefone: <%= @mail[1] %><BR>
+E-Mail: <%= @mail[2] %><BR><BR>
+Mensagem:<BR>
+<%= @mail[3] %></p>

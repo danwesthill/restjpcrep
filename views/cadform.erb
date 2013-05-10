@@ -1,0 +1,384 @@
+﻿
+<div id="conteudo2">
+
+<div id="mcofertas">
+
+
+
+
+
+<!-- CONTEUDO -->
+
+<!-- <div id="conteudo"> -->
+<!-- <div id="mcofertas"> -->
+
+<form name="form" method="POST" action="/envcad" onSubmit="return valida_cadastro(this)">
+ <input type="hidden" name="v_flag_multiplo_endereco" value="N">
+<input type="hidden" name="v_nu_address" value=""> 
+<table width="470"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top">
+<table width="470" border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+<td>
+<table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+<tr>
+<td>
+
+</td>
+<tr>
+<td>
+<span class="texto_azul"><b>Para preencher o formulário abaixo, por favor, NÃO utilize acentuação.
+</td>
+</tr>
+<tr>
+<td>
+<span class="texto_azul"><b>* Campos obrigatórios
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td><span class="texto_azul">Nome*:</span><!-- Nome -->
+
+<input type="text" name="p_nome" size="55" maxlength="100" class="input" value="" onkeyup="trataNome(this);" onblur="trataNome(this);">
+<span class="texto_azul">Sexo*:</span><!-- Sexo -->
+
+<select name="p_sexo" class="input">
+<option value="M"  SELECTED >Masculino</option>
+<option value="F" >Feminino</option>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<span class="texto_azul">CPF*:</span>
+<input name="p_cpf" type="text" value="" class="input" size="14" maxlength="11" >&nbsp;&nbsp;
+</td>
+</tr>
+
+
+</select>
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<span class="texto_azul"><b>Telefone fixo* : </b></span><!-- DDD e Telefone Fixo-->
+<span class="texto_azul">DDD:</span>
+
+<input name="p_ddd" value="" type="text"  class="input" size="4" maxlength="2"  onkeyup="mc_valnum(this)" >&nbsp;&nbsp;
+
+<span class="texto_azul">Telefone:</span>
+<input name="p_telefone" type="text" value="" class="input" size="12" maxlength="9" onblur="mc_valphone2(this)" onkeyup="mc_valphone(this)"  onblur="trataNumero(this);">&nbsp;&nbsp;
+
+<span class="texto_azul">Ramal:</span><!-- Ramal -->
+<input name="p_ramal" type="text" value="" class="input" size="5" maxlength="5" onkeyup="mc_valnum(this)">
+</td>
+</tr>
+
+  <tr><td height="30">&nbsp;</td>
+</tr>
+<tr>
+<td valign=bottom>
+<span class="texto_azul"><b>Caso saiba seu CEP, informe-o aqui: &nbsp;<b></span>
+<input type="text" name="p_cep" size="10" maxlength="8" class="input" value="">&nbsp;&nbsp;&nbsp;
+<span id="p_faixa" class="texto_red"></span>
+</td></tr>
+<tr>
+<td>&nbsp;
+</td>
+</tr>
+<tr>
+<td>
+<span class="texto_azul"><b>Ou forneça o seu endereço:
+</td>
+</tr>
+</table>
+<table width="90%" border="0" cellspacing="0" cellpadding="2" align="center">
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<span class="texto_azul">Cidade*:</span>
+</td>
+<td><!-- onChange="altera(this)" -->
+
+<input type="text" name="p_cidade" size="40" class="input" maxlength="50" onblur="trataNome(this);maiuscula(this)"
+value=""   onkeyup="trataNome(this);">
+
+</td><td width="20%" align=right> &nbsp &nbsp &nbsp<span class="texto_azul">Estado*:</span><select name="p_uf" class="input">
+<option value="AC">AC
+<option value="AL">AL
+<option value="AP">AP
+<option value="AM">AM
+<option value="BA">BA
+<option value="CE">CE
+<option value="DF">DF
+<option value="ES">ES
+<option value="GO">GO
+<option value="MA">MA
+<option value="MT">MT
+<option value="MS">MS
+<option value="MG">MG
+<option value="PA">PA
+<option value="PB">PB
+<option value="PR">PR
+<option value="PE">PE
+<option value="PI">PI
+<option value="RJ">RJ
+<option value="RN">RN
+<option value="RS">RS
+<option value="RO">RO
+<option value="RR">RR
+<option value="SC">SC
+<option value="SP">SP
+<option value="SE">SE
+<option value="TO">TO
+
+</select></td></tr>
+                <tr>
+<td width="23%"><span class="texto_azul">Endereço*:</span></td>
+<td width="57%">
+<input type="text" name="p_logr_com_tipo" size="45" onblur="trataNome(this);maiuscula(this);" onChange="altera(this)" maxlength="50" class="input" value="" onkeyup="trataNome(this);">
+<!--/td></tr><tr><td-->
+</td><td width="20%" align=right><span class="texto_azul">Nº *</span>
+
+<script language="javascript">document.form.p_logr_com_tipo.focus();</script>
+<input type="text" name="p_num" size="10" class="input"  maxlength="8" value="" onkeyup="mc_valnum(this)">
+
+</td>
+</tr>
+
+<tr>
+<td width="23%"><span class="texto_azul">Complemento:</span></td>
+<td width="57%">
+<input type="text" name="p_complemento" value="" size="40" class="input" maxlength="100" onblur="maiuscula(this);trataNome(this);" value="" onkeyup="trataNome(this);"> 
+</td>
+</tr>
+<tr><td>
+&nbsp;
+</td>
+</tr>
+
+ <!--    <tr>
+<td colspan=2>
+<table  border="0" width="100%">
+<tr>
+<td colspan=2>
+<input name="p_predio_casa" type="radio" value="A"  onClick="f_trata_apartamento(this)"  checked ><span class="texto_azul"><b>Apartamento &nbsp;</b></span>
+<input name="p_predio_casa" type="radio" value="C"  onClick="f_trata_casa(this)" ><span class="texto_azul" ><b>Casa &nbsp;</b></span>
+</td>
+<td> &nbsp; </td>
+<td colspan=2>
+<input name="p_com_res" type="radio" value="C"  onClick="f_trata_comercial(this)"  onkeyup="trataNome(this);">
+<span class="texto_azul"><b>Comercial &nbsp;</b></span>
+<input name="p_com_res" type="radio" value="R"  onClick="f_trata_residencial(this)"  checked  onkeyup="trataNome(this);"><span class="texto_azul"><b>Residencial &nbsp;</b></span>
+</td>
+</tr>
+
+
+<tr>
+
+<td>
+<span class="texto_azul">Edifício</span><span class="texto_azul" id="msg_edificio" onkeyup="trataNome(this);"></span>
+</td>
+
+<td>
+<span class="texto_azul">Apartamento</span><span class="texto_azul" id="msg_apartamento" onkeyup="trataNome(this);"></span>
+</td>
+
+<td>
+<span class="texto_azul">Andar</span>
+</td>
+<td>
+<span class="texto_azul">Bloco</span>
+</td>
+<td>
+<span class="texto_azul">Condomínio</span>
+</td>
+
+
+</tr>
+
+<tr>
+<td>
+<input type="text" name="p_edificio" size="15" class="input" maxlength="50" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<td>
+<input type="text" name="p_apartamento" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<td>
+<input type="text" name="p_andar" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<td>
+<input type="text" name="p_bloco" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+
+<td>
+<input type="text" name="p_condominio" size="15" class="input" maxlength="50" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+</tr>
+<tr>
+
+<td>
+<span class="texto_azul">Torre</span>
+</td>
+<td>
+<span class="texto_azul">Conjunto</span>
+</td>
+<td>
+<span class="texto_azul">Loja</span>
+</td>
+<td>
+<span class="texto_azul">Lote</span>
+</td>
+<td>
+<span class="texto_azul">Quadra</span>
+</td>
+</tr>
+
+       <tr>
+<td>
+<input type="text" name="p_torre" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<td>
+<input type="text" name="p_conjunto" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<td>
+<input type="text" name="p_loja" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<td>
+<input type="text" name="p_lote" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<td>
+<input type="text" name="p_quadra" size="15" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+<tr>
+<td>   <span class="texto_azul">Sala</span></td>
+
+<tr>
+<td>
+<input type="text" name="p_sala" size="10" class="input" maxlength="10" onblur="trataLocal(this)" value="" onkeyup="trataNome(this);">
+</td>
+</tr>
+
+         </table>
+</td>
+</tr>
+-->
+
+  <tr>
+<td width="25%"><span class="texto_azul"><b>Ponto de referência*:</b></span></td>
+<td width="75%">
+<input type="text" name="p_referencia" value="" size="65" class="input" maxlength="100" onblur="trataLocal(this);trataNome(this);" onkeyup="trataNome(this);">
+</td>
+</tr>
+<tr>
+<td width="25%"><span class="texto_azul">Nome da empresa</span><span id="msg_empresa" class="texto_azul"></span></td>
+<td width="75%">
+<input type="text" name="p_empresa" value="" size="40" class="input" maxlength="100" onblur="trataLocal(this);trataNome(this);" onkeyup="trataNome(this);">
+</td>
+</tr>
+<tr>
+<td width="25%"><span class="texto_azul">Data de nasc.:</span></td>
+<td width="75%">
+<input type="text" name="p_data_nascimento" value="" size="20" class="input" maxlength="10" onblur="verifica_data(this)">&nbsp;<span class="texto_azul">(dd/mm/aaaa)</span>
+ </td>
+</tr>
+</table> 
+
+
+<tr><td height="30">&nbsp;</td>
+</tr>
+<tr>
+<td height=40><span class="texto_azul">E-mail:</span><span class="texto_azul" id="msg_email"></span><!-- e-mail -->
+<input type="text" name="p_email" value=""  class="input" maxlength="100" size="55" onblur="return valida_email(this.value);"  onkeyup="trataEmail(this);">
+</td>
+</tr>
+<tr>
+<td>
+<span class="texto_azul">Senha:</span><!-- Senha --><span class="texto_azul" id="msg_senha1"></span>
+
+<input type="password" name="p_senha2" size="8" class="input" maxlength="8">
+<span class="texto_azul">(mínimo de 6 e máximo 8 caracteres)</span>
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span class="texto_azul">Confirme a senha:</span><span class="texto_azul" id="msg_senha2"></span>
+<input type="password" name="p_senha3" size="8" class="input" maxlength="8">
+<P>
+Deve ser utilizado na senha, conforme a política de senhas: letra maiúscula, letra minúscula, número e/ou caracter especial. Não é permitido utilizar os caracteres < > ' " & # %
+<input type="hidden" name="p_fomador_opniao" value=""><span class="texto_azul">
+ <tr>
+<td colspan="2">
+  <input type="checkbox" name="p_promocoes" onclick="marca_email()" value="S" unchecked>
+<span class="texto_azul">Sim, desejo receber ofertas e promoções do Restaurante JeitoWeb via e-mail </span>
+</td>
+</tr>   
+</table>
+<br>
+<table width="79%" border="0" cellspacing="0" cellpadding="0" align="center">
+
+<tr>
+<td>&nbsp;</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<td>
+<div align="center">
+<a href="javascript:pagina_principal(0)">
+<img src="/img/btn_cancelar.gif" width="67" height="22" border="0">
+</a>
+</div>
+</td>
+<td>
+<div align="center">
+<input type="image" src="/img/btn_continuar.gif" width="65" height="22" border="0">
+</div>
+</td>
+</tr>
+</table>
+<input type="hidden" name="p_bairro" value="">
+<input type="hidden" name="p_tipo_logradouro" value="">
+<input type="hidden" name="p_logradouro" value="" >
+
+<input type="hidden" name="p_id_customer" value="">
+<input type="hidden" name="p_chamadora"   value="mc4_altere2_prg">
+<input type="hidden" name="p_address_ref" value="">
+
+
+</form>
+
+<form name="form2">
+<input type="hidden" name="p_cep_padron" value="">
+<input type="hidden" name="p_tipo_logradouro_padron" value="">
+<input type="hidden" name="p_logradouro_padron" value="">
+<input type="hidden" name="p_cidade_padron" value="">
+<input type="hidden" name="p_numero_inicial" value="0">
+<input type="hidden" name="p_numero_final" value="999999">
+<input type="hidden" name="p_logr_com_tipo_padron" value="">
+
+</form>
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+<!--<div>-->
+
+</div>
+</div>

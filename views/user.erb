@@ -1,0 +1,126 @@
+﻿<% if login? %>
+<% if request.path_info!="/" %>
+
+<div id="lateral">
+
+<% user=Usuario.first(:email=>username) %>
+<div id="dados">  
+<h5>Dados Pessoais</h5>
+<div class="titDados">Bem-vindo <strong>&nbsp;<%= user.nome %></strong></div>  
+<div class="txtDados"><strong>Endereço: </strong> <%= hesc user.endereco %>, <%= hesc user.numero %><br><%= hesc user.cidade %>-<%= hesc user.estado %></div>  
+<div class="txtDados"><strong>Telefone:</strong> (<%= hesc user.ddd %>) <%= hesc user.fone %></div>
+
+</div>
+<div id="minha">
+          <h6>Minha Bandeja</h6>
+        <div id="tabBandeja">
+
+     <table cellpadding="0" cellspacing="0" border="0">
+
+     <tr>
+             <td>
+               <table width="100%" border="0">
+                 <tr>
+      <td>&nbsp;</td>
+     <td width="30" class="titBandeja">QTD.</td>
+     <td width="80" class="titBandeja">PROD</td>
+     <td class="titBandeja">VLR</td>
+     </tr>
+      </table>
+    </td>
+   </tr>
+     <tr>
+                <td width="172" height="149" valign="top">
+                <!--Parte Atualizada-->
+<% if Bandeija.first(:usuario_id=>Usuario.first(:email=>username).id, :confirmed=>false, :prepronto=>false) != nil %>
+
+<% band=Bandeija.first(:usuario_id=>Usuario.first(:email=>username).id,  :confirmed=>false, :prepronto=>false) %>
+
+<% if band.itembandeijas.size > 0 %>
+
+<% band.itembandeijas.each do |item| %>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr><td>&nbsp;</td><td colspan="3" nowrap><p>&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</p></td></tr>
+
+<tr>
+                     <td width="10" height="15"></td>
+                     <td width="20" align="center" class="cesta-item-nv"><%=item.qtd%></td>
+<td width="140" class="cesta-item-nv">
+<%= item.marmita.nome %>
+</td>
+<td width="32" class="cesta-item-nv">
+                      <div align="right">   <%= "%.2f" % item.val %></div>
+       </td>
+
+                <form name="retirada" method="post" action="/retiraitem/<%= item.id %>">
+                          <td width="18">
+                              <div align="center">
+                                  <input type="image" src="/img/menos.gif" width="14" height="10" border="0">
+                              </div>
+                          </td>
+                         </form>
+</tr>
+<% end %>
+<td>&nbsp;</td>
+<tr>
+             <td width="10" height="15"></td>
+                <td width="20" align="center" class="cesta-item-nv"></td>
+                <td width="140" class="cesta-item-nv"><strong>Valor do pedido:</strong></td>
+                <td width="32" class="cesta-item-nv">
+                  <div align="right"><strong>   <%= "%.2f" % band.sum %></strong></div>
+    </td>
+                <td width="18"></td>
+             </tr>
+             <tr>
+                <td width="10" height="15"></td>
+                <td width="20" align="center" class="cesta-item-nv"></td>
+                <td width="140" class="cesta-item-nv"><strong>Taxa de entrega:</strong></td>
+                <td width="32" class="cesta-item-nv">
+      <div align="right"><strong>   <%= "%.2f" % Taxa.first(:id=>1).val %></strong></div>
+                </td>
+    <td width="18"></td>
+             </tr>
+    <tr>
+                <td width="10" height="15"></td>
+                <td width="20" align="center" class="cesta-item-nv"></td>
+                <td width="140" class="cesta-item-nv"><strong>Total do pedido:</strong></td>
+                <td width="32" class="cesta-item-nv">
+      <div align="right"><strong>   <%= "%.2f" % ((Taxa.first(:id=>1).val)+band.sum) %></strong></div>
+                </td>
+               
+             </tr>
+
+</table>
+
+          <!---   FIM DA CESTA -->
+                </td>
+        </tr>
+        <tr>
+          <td width="209" height="10" >
+             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="8">
+<tr><td class="cesta-white">.Para confirmar este pedido, clique em Finalizar Pedido.<br> .Para desistir, clique em Cancelar. <br> .Para excluir itens do pedido, clique em <img src="/img/menos.gif" width="14" height="10" border="0">.</td></tr>
+</table>
+         </td>
+        </tr>
+        <tr>
+<td align="center">
+               <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+                               <td><a href="/cancelabandeija"><input type="submit" class="input" value="Cancelar" style="width:60px;"></a></td>
+                               <td><a href="/finalizabandeija"><input type="submit" class="input"  value="Finalizar" style="width:60px;"></td>
+		<td colspan=2><a href="/precadastra"><input type="submit" class="input"  value="Cadastrar" style="width:60px;"></td>
+                             </tr>
+                           </table>
+       </td> 
+</tr>
+<% end %>
+<% end %>
+       </table>
+       </div>
+       
+       </div>
+
+
+</div>
+<%end%>
+<% end %>

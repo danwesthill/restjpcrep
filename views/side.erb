@@ -1,0 +1,43 @@
+﻿<div id="menuSecundario">
+
+<div>
+
+<ul>
+<li class="titMenu">&nbsp;</li>
+<li class="cardapio"><a href="/download" >Cardápio</a></li>
+
+<li class="cardapio"><a href="/lojafisica">Loja Física</a></li>
+
+<li class="cardapio"><a href="/diskquentinhas">Disk Quentinha</a></li>
+
+<li class="cardapio"><a href="/tabelanutricional">Tabela Nutricional</a></li>
+
+<li class="cardapio"><a href="javascript:favoritos()" title="Para seu favoritos">Para seu favoritos</a></li>
+
+</ul>
+
+</div>
+
+<% if login? %>
+<% if admin? %>
+
+<div>
+
+<ul>
+
+<li class="titMenu">Controle</li>
+<li class="cardapio"><a href="/pedidos" >Pedidos</a></li>
+<!--<li class="cardapio"><a href="/horario" target="produtos" >Horários</a></li>-->
+<li class="cardapio"><a href="/cadprodframe" >Cadastrar Produto</a></li>
+<li class="cardapio"><a href="/altprodframe" >Alterar Produto</a></li>
+<li class="cardapio"><a href="/verusuarios">Usuários</a></li>
+<li class="cardapio"><a href="/config">Configurações</a></li>
+
+
+</ul>
+
+
+</div>
+<%end%>
+<% end %>
+</div>

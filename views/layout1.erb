@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<title>EntregaWeb</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		
+	</head>
+	<frameset rows="90,*" framespacing="0" frameborder="no" noresize border="0">
+
+	<frame src="/top" scrolling="no" frameborder="no" noresize name="topbar" >
+
+	<frameset cols="140,860,*" framespacing="0" frameborder="no" noresize border="0">
+
+	<frame src="/side" frameborder="no" noresize scrolling="no" name="menulateral" >
+
+	<%= yield %>
+	
+	<frame src="/user" scrolling="auto" frameborder="no" name="user" >
+	</frameset>
+	</frameset>
+
+</html>

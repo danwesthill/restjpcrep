@@ -1,0 +1,141 @@
+#menuSecundario{
+
+float:left;
+overflow-x:hidden;
+width:138px;
+
+margin:0 2px;
+
+}
+
+#menuSecundario ul li{
+
+display:inline;
+
+width:137px;
+
+_width:135px;
+
+height:23px;
+
+}
+
+.titMenu{
+
+background:url(/img/bg_menuLan.png) repeat-x;
+
+float:left;
+
+font:bold 10px verdana;
+
+color:#feeeda;
+
+text-transform:uppercase;
+
+padding:3px 0 0 5px;
+
+}
+
+.cardapio{
+
+background:url(img/bg_novo.gif) repeat-x;
+
+float:left;
+
+padding:1px 0 0 5px;
+
+height:23px;
+
+}
+
+.cardapio a{
+
+font:10px verdana;
+
+color:#feeeda;
+
+}
+
+.menuSec{
+
+background:url(img/bg_menu.gif) repeat-x;
+
+float:left;
+
+padding:0 0 0 5px;
+
+margin-top:1px;
+
+height:23px;
+
+}
+
+.menuSec a{
+
+font:10px verdana;
+
+color:#feeeda;
+
+}
+
+.textPedido{
+
+__position:absolute;
+
+display:inline;
+
+__top:100px;
+
+float:left;
+
+background:url(img/bg_texto.gif) no-repeat;
+
+width:130px;
+
+height:46px;
+
+padding:10px 5px;
+
+_padding:10px 0 0 5px;
+
+font:9px verdana;
+
+color:Black;
+
+
+
+}
+
+.bannerCartao{
+
+#__background:url(img/img_cartoes_new4.jpg);
+
+display:inline;
+
+float:left;
+
+padding:0 0 0 5px;
+
+margin-top:1px;
+
+width:139px;
+
+height:120px;
+
+}
+
+.txtMensagem{
+
+display:inline;
+
+padding:5px;
+
+font:bold 9px verdana;
+
+color:#ffffff;
+
+float:left;
+
+height:200px;
+
+}

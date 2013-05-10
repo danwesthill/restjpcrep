@@ -1,0 +1,285 @@
+#geral{
+
+background:#ed2124 repeat;
+
+display:table;
+
+}
+
+#logoMc{
+
+float:left;
+
+padding:10px;
+
+}
+
+#logos{
+
+float:right;
+
+margin:10px 10px 0 0;
+
+}
+
+#rodape address{
+
+float:left;
+
+font:10px verdana;
+
+color:white;
+
+padding:10px 0 0 65px;
+
+}
+
+#bannerCentral{
+
+float:left;
+
+border-bottom:1px solid white;
+
+}
+
+#bannerCentral h3{
+
+background:url(img/mcentrega.gif) no-repeat;
+
+width:846px;
+
+height:48px;
+
+overflow:hidden;
+
+text-indent:-99999px;
+
+}
+
+#imgCentral{
+
+float:left;
+
+height:219px;
+
+}
+
+#menuCentral{
+
+float:left;
+
+background:url(img/bg_barradescricao.gif) repeat-x;
+
+width:824px;
+
+height:21px;
+
+padding:5px 10px 0px 12px;
+
+}
+
+#navCentral{
+
+float:left;
+
+}
+
+#navCentral ul li{
+
+display:inline;
+
+width:18px;
+
+height:23px;
+
+padding:5px 3px;
+
+}
+
+#navCentral ul li a{
+background:url(/img/bgbut1.png) no-repeat;
+font:bold 12px verdana;
+padding:7px 7px;
+color:white;
+
+}
+
+#navCentral ul li a:hover{
+
+font:bold 12px verdana;
+padding:6px 7px;
+color:#4e87d4;
+background:url(/img/bgbut2.png) no-repeat;
+}
+
+#legenda{
+
+float:right;
+
+font:bold 12px verdana;
+
+color:white;
+
+}
+
+#menuLanches{
+
+float:left;
+
+border-right:1px solid white;
+
+width:535px;
+
+
+
+padding:0px 5px;
+
+background:url(img/bg_texto.jpg) repeat-x #d68e0d;
+
+}
+
+#menuLanches ul li{
+
+float:left;
+
+display:inline;
+
+height:59px;
+
+}
+
+#num10{
+
+width:524px;
+
+_width:513px;
+
+float:left;
+
+height:164px;
+
+padding:10px;
+
+display:block;
+
+}
+
+#num01, #num02, #num03, #num04, #num05, #num06, #num07, #num08, #num09, #num10, #num11{
+
+width:524px;
+
+_width:513px;
+
+float:left;
+
+height:164px;
+
+padding:10px;
+
+display:none;
+
+}
+
+.titLanches{
+
+font:bold 20px arial;
+
+color:#7d0002;
+
+width:237px;
+
+}
+
+.titLanches1{
+
+font:bold 16px arial;
+
+color:#7d0002;
+
+width:237px;
+
+}
+
+.txtLanches{
+
+font:11px arial;
+
+color:black;
+
+width:237px;
+
+}
+
+.imgLanches{
+
+width:241px;
+
+float:right;
+
+}
+
+.input{
+
+width:202px;
+
+border-right:1px solid #003f95;
+
+border-bottom:1px solid #003f95;
+
+}
+
+.input2{
+
+width:168px;
+
+margin-right:2px;
+
+border-right:1px solid #003f95;
+
+border-bottom:1px solid #003f95;
+
+}
+
+#facapedido{
+
+background:url(img/bg_facaseupedido.gif) no-repeat;
+
+width:301px;
+
+height:297px;
+
+float:left;
+
+
+
+}
+
+#facapedido h3{
+
+float:left;
+
+
+
+}
+
+#txtFaca{
+
+font:10px verdana;
+
+color:#02275a;
+
+padding:54px 0 0 29px;
+
+}
+
+#txtFaca p{
+
+margin:8px 0;
+
+}
+
+#formFaca{
+
+margin:0 10px;
+
+}

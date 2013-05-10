@@ -1,0 +1,142 @@
+﻿<div id="conteudo">
+	<h4>Diferenciar Marmita</h4>
+	<div id="mcofertas">
+
+	<% logger.info @id %>
+	<% marm=Marmita.first(:id=>@id.to_i) %>
+	<form name="form" method="POST" action="/envcustprod" target="_top">
+		<table width="470"  border="0" cellspacing="0" cellpadding="0">
+		<tr><td valign="top">
+			<table width="470" border="0" cellspacing="0" cellpadding="0">
+
+			<input type="hidden" name="cad_nome" value="<%=marm.nome%>">
+			<input type="hidden" name="cad_preco" value="<%=marm.preco%>">
+			<input type="hidden" name="principal" value="<%=marm.princicomp.principal.id%>">
+			<input type="hidden" name="img" value="<%=marm.img%>">
+			<tr><td>&nbsp;</td></tr>
+
+			<tr><td><span class="texto_azul">Marmita:</span><!-- Nome -->
+			<span class="texto_azul"><%= marm.nome %></span></td></tr>
+
+			<tr><td>&nbsp;</td></tr>
+
+			<tr><td><span class="texto_azul">Preço:</span><!-- Nome -->
+			<span class="texto_azul"><%= "%.2f" % marm.preco %></span></td></tr>
+			
+			<tr><td>&nbsp;</td></tr>
+			
+			<tr><td><span class="texto_azul">Acompanhamentos:</span></td></tr>
+			
+			<tr><td>&nbsp;</td></tr>
+
+			<% ingredientes=Ingrediente.all %>
+			<% cont=marm.componentes.size %>
+			<input type="hidden" name="c2" value="<%=cont%>">
+			<% c2=4 %>
+			<% if cont<4 %>
+			<% c2=cont %>
+			<% end %>
+
+			<tr><td>
+			<% for i in 0..c2-1 do %>
+			<select name="i<%=i%>" class="input">
+			<option value="0">Nenhum</option>
+			<% ingredientes.each do |item| %>
+			<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %> ><%= item.nome %></option>
+			<% end %>
+			</select>
+			<% end %>
+			</td></tr>
+			
+			<tr><td>&nbsp;</td></tr>
+
+			<tr><td><% c2=8 %>
+			<% if cont<8 %>
+			<% c2=cont %>
+			<% end %>
+			<% for i in 4..c2-1 do %>
+			<select name="i<%=i%>" class="input">
+			<option value="0">Nenhum</option>
+			<% ingredientes.each do |item| %>
+			<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %>><%= item.nome %></option>
+			<% end %>
+			</select>
+			<% end %>
+			</td></tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			</tr>
+
+			<tr>
+			<td>
+			<% c2=12 %>
+			<% if cont<12 %>
+			<% c2=cont %>
+			<% end %>
+			<% for i in 8..c2-1 do %>
+			<select name="i<%=i%>" class="input">
+			<option value="0">Nenhum</option>
+			<% ingredientes.each do |item| %>
+			<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %> ><%= item.nome %></option>
+			<% end %>
+			</select>
+			<% end %>
+			</td></tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			</tr>
+
+<tr>
+<td>
+<% c2=16 %>
+<% if cont<16 %>
+<% c2=cont %>
+<% end %>
+<% for i in 12..c2-1 do %>
+<select name="i<%=i%>" class="input">
+<option value="0">Nenhum</option>
+<% ingredientes.each do |item| %>
+<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %> ><%= item.nome %></option>
+<% end %>
+</select>
+<% end %>
+</td>
+
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><span class="texto_azul">Qtd:</span><!-- Nome -->
+<input type="text" name="qtd" size="15" maxlength="2" class="input" value="1">
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<input type="image" src="/img/btn_continuar.gif" width="65" height="22" border="0">
+</td>
+</tr>
+
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+<!--<div>-->
+
+</div>
+</div>

@@ -1,0 +1,22 @@
+﻿<div id="conteudo">
+<h5>Alterar Produtos</h4>
+<div id="abas">
+	<div id='selaba'>
+	<a href="/altprodframe" >Produto</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/altitemframe" >Item</a>
+	</div>
+</div>
+<div id="mcofertas">
+<% Marmita.all(:pers=>false).each do |marm| %>
+<table style="border:1px solid;">
+<tr><td><%=marm.nome%></td><td style="width:100px;"><%="%.2f" % marm.preco%></td></tr>
+<tr><td rowspan=2><img src="<%= marm.img %>" width="159" height="91" /></td><td><a href="/editamarmita/<%=marm.id%>" class="input" style="background:#DDF;">Editar</td></tr>
+<tr><td><a href="/apagamarmita/<%=marm.id%>" class="input" style="background:#DDF;">Apagar</td></tr>
+</table>
+<%end%>
+<div id="rolagem">&nbsp;</div>
+
+</div>
+</div></div>

@@ -1,0 +1,28 @@
+﻿<div id="conteudo"   style="margin-left:1px; margin-right:1px; width:630px;">
+<%=styled_flash%>
+<div id="mcofertas">
+
+<!-- CONTEUDO -->
+
+<!-- <div id="conteudo"> -->
+<!-- <div id="mcofertas"> -->
+<h5>Usuários</h4>
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr>
+<td valign="top">
+<table border="0" cellspacing="0" cellpadding="0" style="width:100%;">
+<tr><th>Nome</th><th>Email</th><th>DDD</th><th>Telefone</th><th>Admin</th><th>Visualizar/Alterar</tr>
+<% Usuario.all.each do |user| %>
+<tr><td><%=hesc user.nome%></td><td><%=hesc user.email%></td><td><%=hesc user.ddd%></td><td><%=hesc user.fone%></td><td><%=(user.adm==true ? "SIM" : "NÃO")%></td><td><a href="/editauser/<%=user.id%>">Visualizar/Editar</a></td></tr>
+<% end %>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+<!--<div>-->
+
+</div>
+
+</div>

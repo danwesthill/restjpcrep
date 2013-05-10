@@ -1,0 +1,94 @@
+﻿<div id="conteudo">
+
+<div id="mcofertas">
+
+
+
+
+
+<!-- CONTEUDO -->
+
+<!-- <div id="conteudo"> -->
+<!-- <div id="mcofertas"> -->
+
+<form name="form" method="POST" action="/envaltitem">
+<table width="470"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top">
+<table width="470" border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+<td>
+<span class="texto_azul"><b>Alterar itens para marmitas
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<span class="texto_azul"><b>Principais
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+<tr>
+<% Principal.all.each do |item| %>
+<td><span class="texto_azul">Nome:</span><!-- Nome -->
+<input type="text" name="princ_nome<%= item.id %>" size="55" maxlength="55" class="input" value="<%= item.nome %>" style="width:130px;">
+<span class="texto_azul"><a href="/apagaprinc/<%= item.id %>">Apagar</a></span>
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+<% end %>
+
+<tr>
+<td>
+<span class="texto_azul"><b>Acompanhamentos
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<% Ingrediente.all.each do |item| %>
+<td><span class="texto_azul">Nome:</span><!-- Nome -->
+<input type="text" name="acomp_nome<%= item.id %>" size="55" maxlength="55" class="input" value="<%= item.nome %>" style="width:130px;">
+<span class="texto_azul"><a href="/apagacomp/<%= item.id %>">Apagar</a></span>
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+<% end %>
+
+<tr>
+<td>
+<input type="image" src="/img/btn_continuar.gif" width="65" height="22" border="0">
+</td>
+</tr>
+
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+<!--<div>-->
+
+</div>
+
+</div>

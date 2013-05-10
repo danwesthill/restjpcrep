@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<% if request.path_info=="/pedidos" or request.path_info=="/pedido" or request.path_info=="/acompanhamento" %>
+		<meta http-equiv="refresh" content="30" >
+		<%end%>
+
+
+<title>EntregaWeb</title>
+
+<!--<link rel="icon" href="/favicon.ico">-->
+
+<link rel="stylesheet" type="text/css" href="/top.css" />
+<link rel="stylesheet" type="text/css" href="/side.css" />
+<link rel="stylesheet" type="text/css" href="/center.css" />
+<link rel="stylesheet" type="text/css" href="/user.css" />
+<% if request.path_info=="/" %>
+<% logger.info "////////////////" %>
+<%= erb :javaindex %>
+<% end %>
+<% logger.info "$$$$$$"+request.path_info.to_s %>
+<% if request.path_info=="/cadform" or request.path_info=="/cadastro" %>
+<% logger.info "***************" %>
+<%= erb :javacad %>
+<% end %>
+
+<script language="JavaScript">
+
+function favoritos(){
+
+browser_name = navigator.appName;
+
+browser_version = parseFloat(navigator.appVersion);
+
+if(browser_name == "Netscape" && browser_version >= 3.0) {
+
+alert("Pressione <Ctrl>+D para adicionar aos BookMarks.");
+
+}else{
+
+window.external.AddFavorite("http://fcsmir.herokuapp.com",document.title);
+
+//alert("faltando texto")
+
+}
+
+}
+</script>
+</head>
+
+<body<%=@stt%>>
+<div id="backy" >
+
+<%= erb :top %>
+
+<br class="clearfix">
+
+<%= erb :side %>
+<%= yield %>
+
+<%= erb :user %>
+
+
+
+<!-- RODAPE -->
+
+<!-- RODAPE -->
+<%=erb :rodape%>
+
+</body></html>

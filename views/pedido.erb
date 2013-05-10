@@ -1,0 +1,45 @@
+﻿<div id="conteudo">
+
+<div id="mcofertas">
+
+
+<% ped=Bandeija.first(:id=>@id.to_i) %>
+<h5 background="img/bg_h4.gif" style="background:url(img/bg_h4.gif) repeat-x;">Pedido cod <%=ped.cod%></h4>
+<table>
+<tr><td><b>Cliente: <a href="/editauser/<%= ped.usuario.id%>"><%=hesc ped.usuario.nome%></a></b></td></tr>
+<tr><td>Status <%=hesc ped.status%></td></tr>
+<tr><td>Endereço: <%=hesc ped.usuario.endereco+", "+ped.usuario.numero%></td></tr>
+<tr><td>Cidade: <%=hesc ped.usuario.cidade%></td></tr>
+<tr><td>Telefone: (<%=hesc ped.usuario.ddd+") "+ped.usuario.fone%></td></tr>
+<tr><td>Valor: <%= "%.2f" % ped.sum.to_s %></tr></td>
+<tr><td>Forma de pagamento: <%= ped.forma %></tr></td>
+<% if ped.forma="Dinheiro" %>
+<tr><td>Comentário: <%=hesc ped.coment%></td></tr>
+<tr><td>&nbsp;</td></tr>
+<%end%>
+<tr><td>Pedido</td></tr>
+<% ped.itembandeijas.each do |item| %>
+<tr><td><%=item.marmita.nome%></td></tr>
+<tr><td><%=item.marmita.princicomp.principal.nome%>
+<% item.marmita.componentes.each do |tt| %>
+<%=", #{tt.ingrediente.nome}"%>
+<% end %></td></tr>
+<tr><td>&nbsp;</td></tr>
+<% end %>
+</table>
+<table>
+<tr><td colspan=3 style="text-align:left;">Ações</td></tr>
+<tr>
+<td><%=ped.ackn==false ? "<a href='/confped/#{ped.id}'>Confirmar</a></td>" : 'Confirmar</td>'%>
+<td><%=ped.enviado==false ? "<a href='/envped/#{ped.id}'>Enviar</a></td>" : 'Enviar</td>'%>
+<td><%=ped.delivered==false ? "<a href='/entped/#{ped.id}'>Entregar</a></td>" : 'Entregar</td>'%>
+</tr>
+</table>
+
+
+
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</div>

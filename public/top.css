@@ -1,0 +1,454 @@
+/* CSS Topo */
+
+*{
+
+margin:0px;
+
+padding:0px;
+
+border:0px;
+
+text-decoration:none;
+
+list-style:none;
+
+}
+
+body{
+width:1000px;
+overflow-x:hidden;
+background:#ed2124 repeat;
+
+}
+
+#backy {
+
+        -webkit-background-size: cover; /*for webKit*/
+        -moz-background-size: cover; /*Mozilla*/
+        -o-background-size: cover; /*opera*/
+        background-size: cover; /*generic*/
+}
+
+.success{
+	width:100%;
+	background: #CFC;
+	border: 2px solid #6B6;
+}
+
+.error{
+	width:100%;
+	background: #FCC;
+	border: 2px solid #F66;
+}
+
+#topo{
+
+float:left;
+
+width:999px;
+
+}
+
+#topo h1{
+position:relative;
+left:0px;
+top:0px;
+width:373px;
+
+height:142px;
+
+margin:0px 0px;
+margin-top:0px;
+_margin:0px 0px 0px 0px;
+
+float:left;
+
+}
+
+#facab{
+display:inline;
+float:left;
+left:10px;
+position:relative;
+}
+
+#topo h1 a{
+
+width:373px;
+
+height:142px;
+
+display:block;
+
+}
+
+
+
+#topo h2{
+width:145px;
+padding: 0px;
+height:71px;
+
+margin-top:4px;
+
+float:right;
+
+}
+
+#topo h2 a{
+position:relative;
+float:left;
+width:145px;
+
+height:71px;
+margin:0px;
+display:block;
+
+}
+
+#menu{
+position:relative;
+left:15px;
+width:330px;
+
+float:left;
+
+margin:1px 6px 4px 0px;
+
+border-right:1px solid #770104;
+
+border-bottom:1px solid #770104;
+
+}
+
+
+
+#menu ul li{
+
+display:inline;
+
+padding:1px 5px 4px 0;
+
+float:left;
+
+}
+
+#menu .faca{
+
+background:url(img/btn_home.gif) no-repeat;
+
+width:111px;
+
+height:20px;
+
+text-indent:-999999px;
+
+overflow:hidden;
+
+position:relative;
+
+left:32px;
+
+}
+
+#menu .faca a{
+
+display:block;
+
+width:111px;
+
+height:20px;
+
+}
+
+#menu .como{
+
+background:url(img/btn_comofunciona.gif) no-repeat;
+
+width:111px;
+
+height:20px;
+
+text-indent:-999999px;
+
+overflow:hidden;
+
+position:relative;
+
+left:32px;
+}
+
+#menu .como a{
+
+display:block;
+
+width:111px;
+
+height:20px;
+
+}
+
+#menu .acompanhe{
+
+background:url(img/btn_acompanheseupedido.gif) no-repeat;
+
+width:143px;
+
+height:20px;
+
+text-indent:-999999px;
+
+overflow:hidden;
+
+}
+
+#menu .acompanhe a{
+
+display:block;
+
+width:143px;
+
+height:20px;
+
+}
+
+#menu .cadastro{
+
+background:url(img/btn_cadastro.gif) no-repeat;
+
+width:111px;
+
+height:20px;
+
+text-indent:-999999px;
+
+overflow:hidden;
+
+position:relative;
+
+left:32px;
+
+}
+
+#menu .cadastro a{
+
+display:block;
+
+width:111px;
+
+height:20px;
+
+}
+
+#menu .fale{
+
+background:url(img/btn_telefones.gif) no-repeat;
+
+width:111px;
+
+height:20px;
+
+text-indent:-999999px;
+
+overflow:hidden;
+
+position:relative;
+
+left:32px;
+
+}
+
+#menu .fale a{
+
+display:block;
+
+width:111px;
+
+height:20px;
+
+}
+
+#menu .tabela{
+
+background:url(img/btn_tabelanutricional.gif) no-repeat;
+
+width:143px;
+
+height:20px;
+
+text-indent:-999999px;
+
+overflow:hidden;
+
+}
+
+#menu .tabela a{
+
+display:block;
+
+width:143px;
+
+height:20px;
+
+}
+
+
+
+#menu .favoritos{
+
+background:url(img/btn_pedido_pre.gif) no-repeat;
+
+width:152px;
+
+height:20px;
+
+text-indent:-999999px;
+
+overflow:hidden;
+
+}
+
+
+
+#menu .favoritos a{
+
+display:block;
+
+width:143px;
+
+height:20px;
+
+}
+
+
+
+#menu .favorito_inativo{
+
+display:block;
+
+width:143px;
+
+height:20px;
+
+}
+
+br.clearfix {
+	clear: both;
+}
+
+
+
+#menuDivLanguage{
+
+width:839px;
+
+}
+
+#menuLanguage{
+
+width:100%;
+
+float:right;
+
+background:url(/img/bg_menuLan.png) repeat-x;
+
+height:24px;
+
+padding:5px 0 0 28px;
+
+}
+
+#menuLanguage ul li{
+
+padding-right:21px;
+
+float:right;
+
+display:inline;
+
+}
+
+#menuLanguage ul li a{
+
+font:bold 10px verdana;
+
+color:#feeeda;
+
+}
+
+.data{
+
+font:10px verdana;
+
+color:#feeeda;
+
+float:left;
+
+}
+
+#relogio{
+
+position:absolute;
+
+top:10px;
+
+left:550px;
+
+}
+
+.imgRelogio{
+
+float:left;
+
+width:55px;
+
+}
+
+.txtRelogio{
+
+float:left;
+
+}
+
+.titRelogio{
+
+font:bold 10px verdana;
+
+color:#ffeb8e;
+
+}
+
+.contRelogio{
+
+font:20px verdana;
+
+color:#ffeb8e;
+
+}
+
+#rodape{
+	
+	position:relative;
+	float:left;
+	width:985px; 
+	padding-left:15px;
+	padding-top:25px;
+}
+
+#rodape ul{
+	top:20px;
+	position:relative;
+	float:left;
+	left: 120px;
+	width:740px;
+}
+
+#rodape ul li{
+	display:inline;
+	padding-right:14px;
+}
+
+#rodape a{
+	font:bold 11px verdana;
+	color:#feeeda;
+}

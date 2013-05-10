@@ -1,0 +1,7 @@
+$ cat .gitignore
+*.txt
+*.xls
+*.dll
+*.htm
+*.bat
+*.dat

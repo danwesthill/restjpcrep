@@ -1,0 +1,46 @@
+﻿<div id="conteudo">
+<%= styled_flash %>
+<h5>Banners e Logos</h4>
+<div id="abas">
+	<div id='nselaba'>
+	<a href="/config">Geral</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config4">Pagamentos</a>
+	</div>
+	<div id='selaba'>
+	<a href="/config2">Banners</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config5">Slides</a>
+	</div>
+
+</div>
+<div id="mcofertas">
+
+<p>Logos</p>
+<%logos=Campanha.all%>
+<table style="padding-left: 10px;">
+<tr><td>Principal</td><td><a href="/alteralogo/1">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[0].imgg.to_s%>" style="border:1px solid;"/></td></tr>
+<tr><td>Secundário</td><td><a href="/alteralogo/2">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[1].imgg.to_s%>" style="border:1px solid;"/></td></tr>
+<tr><td>Rodapé Esquerda</td><td><a href="/alteralogo/3">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[2].imgg.to_s%>" style="border:1px solid;"/></td></tr>
+<tr><td>Rodapé Direita</td><td><a href="/alteralogo/4">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[3].imgg.to_s%>" style="border:1px solid;"/></td></tr>
+<tr><td>Rodapé Baixo</td><td><a href="/alteralogo/5">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[4].imgg.to_s%>" width="424" style="border:1px solid;"/></td></tr>
+<tr><td>Disque Quentinhas</td><td><a href="/alteralogo/6">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[5].imgg.to_s%>" width="424" style="border:1px solid;"/></td></tr>
+<tr><td>Loja Física</td><td><a href="/alteralogo/7">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[6].imgg.to_s%>" width="424" style="border:1px solid;"/></td></tr>
+<tr><td>Segurança</td><td><a href="/alteralogo/8">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logos[7].imgg.to_s%>" style="border:1px solid;"/></td></tr>
+</table>
+
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</div>

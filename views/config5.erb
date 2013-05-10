@@ -1,0 +1,34 @@
+﻿<div id="conteudo">
+<%= styled_flash %>
+<h5>Banners e Logos</h4>
+<div id="abas">
+	<div id='nselaba'>
+	<a href="/config">Geral</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config4">Pagamentos</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config2">Banners</a>
+	</div>
+	<div id='selaba'>
+	<a href="/config5">Slides</a>
+	</div>
+</div>
+<div id="mcofertas">
+
+<p>Slideshow</p>
+
+<% slides=Slide.all %>
+<% for i in 1..6 %>
+<table style="padding-left: 10px;">
+<tr><td>Slide <%=i%></td><td><a href="/alteraslide/<%=i%>">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=slides[i-1].img.to_s%>" width="424" height="109" style="border:1px solid;"/></td></tr>
+</table>
+<% end %>
+
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</div>

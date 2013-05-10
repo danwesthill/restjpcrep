@@ -1,0 +1,61 @@
+﻿<div id="conteudo">
+<h5>Finalizar Pedido</h4>
+<div id="mcofertas">
+<p> Pagamento com cartão de crédito. 
+<%pag=Email.first(:id=>2).login%>
+<%logger.info pag%>
+<% band=Bandeija.first(:usuario_id=>Usuario.first(:email=>username).id,  :confirmed=>false, :prepronto=>false)%>
+<form method="post" action="https://pagseguro.uol.com.br/v2/checkout/payment.html">  
+      
+    <!-- Campos obrigatórios -->  
+    <input type="hidden" name="receiverEmail" value="<%=pag.to_s%>">  
+    <input type="hidden" name="currency" value="BRL">  
+    <input type="hidden" name="encoding" value="UTF-8">  
+
+<% i=1 %>
+<% band.itembandeijas.each do |item| %>
+    <!-- Itens do pagamento (ao menos um item é obrigatório) -->  
+    <input type="hidden" name="itemId<%=i%>" value="<%=item.marmita.id.to_s%>">  
+    <input type="hidden" name="itemDescription<%=i%>" value="<%=item.qtd.to_s+' '+item.marmita.nome%>">  
+    <input type="hidden" name="itemAmount<%=i%>" value="<%=('%.2f' % item.val).to_s%>">  
+    <input type="hidden" name="itemQuantity<%=i%>" value="1">  
+    <!--<input type="hidden" name="itemWeight<%=i%>" value="1000">-->  
+      <%i+=1%>
+<%end%>
+      
+<input type="hidden" name="itemId<%=i%>" value="Entrega">  
+    <input type="hidden" name="itemDescription<%=i%>" value="Taxa de Entrega">  
+    <input type="hidden" name="itemAmount<%=i%>" value="<%=('%.2f' % Taxa.first(:id=>1).val).to_s%>">  
+    <input type="hidden" name="itemQuantity<%=i%>" value="1">  
+    
+    <!-- Código de referência do pagamento no seu sistema (opcional) -->  
+    <input type="hidden" name="reference" value="<%=band.cod%>">  
+      
+    <!-- Informações de frete (opcionais) -->  
+    <!--<input type="hidden" name="shippingType" value="1">  -->
+    <input type="hidden" name="shippingAddressPostalCode" value="<%=@user.cep%>"> 
+    <!--<input type="hidden" name="shippingAddressStreet" value="Av. Brig. Faria Lima"> --> 
+    <input type="hidden" name="shippingAddressNumber" value="<%=@user.numero%>"> 
+    <!--<input type="hidden" name="shippingAddressComplement" value="5o andar">  -->
+    <!--<input type="hidden" name="shippingAddressDistrict" value="Jardim Paulistano">  -->
+    <!--<input type="hidden" name="shippingAddressCity" value="Sao Paulo">  -->
+    <!--<input type="hidden" name="shippingAddressState" value="SP">  -->
+    <!--<input type="hidden" name="shippingAddressCountry" value="BRA"> --> 
+      
+    <!-- Dados do comprador (opcionais) -->  
+    <input type="hidden" name="senderName" value="<%= @user.nome%>">  
+    <input type="hidden" name="senderAreaCode" value="<%= @user.ddd%>">  
+    <input type="hidden" name="senderPhone" value="<%=@user.fone%>">  
+    <input type="hidden" name="senderEmail" value="<%=@user.email%>">  
+      
+    <!-- submit do form (obrigatório) -->  
+    <input type="image" name="submit"   
+    src="https://p.simg.uol.com.br/out/pagseguro/i/botoes/pagamentos/120x53-pagar.gif"   
+    alt="Pague com PagSeguro">  
+      
+</form>  
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</div>

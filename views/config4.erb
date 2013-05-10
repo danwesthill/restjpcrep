@@ -1,0 +1,50 @@
+﻿<div id="conteudo">
+<%= styled_flash %>
+<h5>Configurações Gerais</h4>
+<div id="abas">
+	<div id='nselaba'>
+	<a href="/config">Geral</a>
+	</div>
+	<div id='selaba'>
+	<a href="/config4">Pagamentos</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config2">Banners</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config5">Slides</a>
+	</div>
+
+</div>
+<div id="mcofertas">
+<form name="config" action="/subconfig" method="post">
+
+<p>Taxa de Entrega</p>
+<%val=Taxa.first(:id=>1)%>
+<table style="padding-left: 10px;">
+<tr>
+<td>Valor: </td>
+<%if val!=nil %>
+<td><input type="text" name="val" size="10" maxlength="5" class="input" value="<%="%.2f" % val.val%>" style="width:130px;"></td>
+<%else%>
+<td><input type="text" name="val" size="10" maxlength="5" class="input" value="" style="width:130px;"></td>
+<%end%>
+</tr>
+<tr><td colspan=2><input type="submit" name="b_taxa" value="Enviar"/ class="input"></td></tr>
+</table>
+
+<% pag=Email.first(:id=>2) %>
+<p>Pagseguro</p>
+<table style="padding-left: 10px;">
+<tr><td>Endereço: </td><td><input type="text" class="input" name="pag" value="<%=pag.login%>" style="width:300px;" /></td></tr>
+<tr><td colspan=2><input type="submit" name="b_pag" value="Enviar"/ class="input"></td></tr>
+</table>
+
+</form>
+
+
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</div>

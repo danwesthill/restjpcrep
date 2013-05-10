@@ -1,0 +1,24 @@
+﻿<div id="conteudo">
+<h5>Pedidos Pré-Cadastrados</h4>
+<div id="mcofertas">
+<% if Bandeija.all(:usuario_id=>Usuario.first(:email=>username).id, :prepronto=>true)==nil %>
+<p>Nenhum pedido pré-cadastrado</p>
+<% else %>
+<BR>
+<div style="padding-left:10px;">
+<% Bandeija.all(:usuario_id=>Usuario.first(:email=>username).id, :prepronto=>true).each do |band| %>
+<table style="border: 1px solid;">
+<tr><th class="thb" colspan=3>Data do cadastro: <%=band.cadtime.strftime("%d - %m - %Y - %H:%M")%></th></tr>
+<tr><th class="thb">Quantidade</th><th class="thb">Produto</th><th class="thb">Valor</th></tr>
+<% band.itembandeijas.each do |item| %>
+<tr><td class="tdb"><%=item.qtd%></td><td class="tdb"><%=item.marmita.nome%></td><td class="tdb"><%="%.2f" % item.val%></td></tr>
+<% end %>
+<tr><th class="thb" colspan=2>Total</th><th class="thb"><%="%.2f" % ((Taxa.first(:id=>1).val)+band.sum)%></th></tr>
+<tr><th class="thb" colspan=3 style="text-align:right;"><a href="/includepre/<%=band.id%>" target="_top">Incluir na Bandeija</a></th></tr>
+</table>
+<BR>
+<%end%>
+</div>
+<%end%>
+
+</div></div>

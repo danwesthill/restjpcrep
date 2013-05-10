@@ -1,0 +1,60 @@
+﻿
+<div id="conteudo">
+
+<div id="mcofertas">
+
+
+
+
+
+<!-- CONTEUDO -->
+
+<!-- <div id="conteudo"> -->
+<!-- <div id="mcofertas"> -->
+<h5>Taxa de Entrega</h4>
+<form name="form" method="POST" action="/ntaxa">
+<table width="470"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top">
+<table width="470" border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<%val=Taxa.first(:id=>1)%>
+<tr>
+<td><span class="texto_azul">Valor:</span><!-- Nome -->
+<%if val!=nil %>
+<input type="text" name="val" size="10" maxlength="5" class="input" value="<%="%.2f" % val.val%>" style="width:130px;">
+<%else%>
+<input type="text" name="val" size="10" maxlength="5" class="input" value="" style="width:130px;">
+<%end%>
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<input type="image" src="/img/btn_continuar.gif" width="65" height="22" border="0">
+</td>
+</tr>
+</form>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+<!--<div>-->
+
+</div>
+
+</div>

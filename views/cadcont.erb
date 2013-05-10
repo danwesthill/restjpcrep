@@ -1,0 +1,794 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="CACHE">
+
+<META HTTP-EQUIV="PRAGMA" CONTENT="CACHE">
+
+<META HTTP-EQUIV="EXPIRES" CONTENT="0">
+
+<title>EntregaWeb</title>
+
+
+
+<STYLE>
+
+/* CSS Document */
+
+*{
+
+margin:0px;
+
+padding:0px;
+
+border:0px;
+
+text-decoration:none;
+
+list-style:none;
+
+}
+
+body{
+
+background:#ed2124 repeat;
+
+}
+
+
+
+#conteudo{
+
+float:left;
+
+border-left:1px solid white;
+
+border-top:1px solid white;
+
+margin-left:7px;
+
+_margin-left:5px;
+
+background:#fdf6c4 repeat;
+
+}
+
+h2{
+
+background:#fdea6a;
+
+width:830px;
+
+height:30px;
+
+padding:10px 0 0 17px;
+
+font:bold 14px verdana;
+
+color:#014094;
+
+border-bottom:1px solid white;
+
+border-right:1px solid white;
+
+}
+
+.btnConf{
+
+padding:10px;
+
+font:9px verdana;
+
+color:#014094;
+
+}
+
+h3{
+
+background:url(img/header_facapedido.gif) no-repeat;
+
+width:847px;
+
+height:48px;
+
+text-indent:-99999px;
+
+overflow:hidden;
+
+border-bottom:1px solid white;
+
+}
+
+h3 a{
+
+display:block;
+
+width:847px;
+
+height:48px;
+
+}
+
+#mcofertas{
+
+width:848px;
+
+float:left;
+
+}
+
+.input{
+
+font:10px verdana;
+
+color:#014094;
+
+border-bottom:1px solid #014094;
+
+border-right:1px solid #014094;
+
+}
+
+.txtTD{
+
+width:400px;
+
+font:9px verdana;
+
+color:#014094;
+
+}
+
+td{
+
+font:10px verdana;
+
+color:#014094;
+
+}
+
+.titBandeja{
+
+font:bold 10px verdana;
+
+color:#ed2124;
+
+}
+
+p{
+
+padding:10px;
+
+font:11px verdana;
+
+color:#014094;
+
+}
+
+.oferta{
+
+width:159px;
+
+float:left;
+
+border-right:1px solid white;
+
+border-bottom:1px solid white;
+
+}
+
+#ofertaDesc{
+
+float:right;
+
+width:158px;
+
+float:left;
+
+border-left:1px solid white;
+
+border-right:1px solid white;
+
+border-bottom:1px solid white;
+
+}
+
+#txtDescricao{
+
+float:left;
+
+width:479px;
+
+}
+
+.titDesc{
+
+font:bold 10px verdana;
+
+color:white;
+
+background:#e6ae02;
+
+height:15px;
+
+border-top:1px solid white;
+
+border-bottom:1px solid white;
+
+padding:5px;
+
+}
+
+#escDes{
+
+background:#e6ae02;
+
+float:left;
+
+padding:15px;
+
+width:450px;
+
+}
+
+#escDes ul li{
+
+display:inline;
+
+background:#fdea6a;
+
+padding:5px;
+
+width:130px;
+
+height:25px;
+
+float:left;
+
+font:12px verdana;
+
+margin:0 10px 1px 0;
+
+color:black;
+
+}
+
+.corD{
+
+background:#fff08c;
+
+}
+
+.txtDesc{
+
+padding:10px;
+
+font:10px verdana;
+
+color:black;
+
+}
+
+#tabDesc{
+
+float:left;
+
+margin:10px;
+
+width:450px;
+
+}
+
+#forma_pagamento{
+
+width:389px;
+
+border-right:1px solid white;
+
+float:left;
+
+}
+
+#cartao{
+
+float:left;
+
+}
+
+h4{
+
+background:url(img/bg_h4.gif) repeat-x;
+
+width:389px;
+
+height:16px;
+
+font:bold 10px verdana;
+
+color:white;
+
+padding:5px;
+
+border-bottom:1px solid white;
+
+}
+
+h5{
+
+background:url(img/bg_h4.gif) repeat-x;
+
+width:447px;
+
+height:16px;
+
+font:bold 10px verdana;
+
+color:white;
+
+padding:5px;
+
+border-bottom:1px solid white;
+
+}
+
+h6{
+
+background:url(img/bg_h4.gif) repeat-x;
+
+width:838px;
+
+height:16px;
+
+font:bold 10px verdana;
+
+color:white;
+
+padding:5px;
+
+border-bottom:1px solid white;
+
+}
+
+.menuTamanho{
+
+padding:5px 0 0 5px;
+
+}
+
+.menuTamanho ul li{
+
+display:inline;
+
+padding:0 1px;
+
+}
+
+.txtOferta{
+
+padding:5px 5px;
+
+font:9px verdana;
+
+color:#014094;
+
+margin:5px 0;
+
+}
+
+.qtdOferta{
+
+float:left;
+
+}
+
+.qtdOferta ul li{
+
+display:inline;
+
+float:left;
+
+padding:0 5px 0 0;
+
+font:bold 9px verdana;
+
+color:#014094;
+
+}
+
+.qtdOferta ul li select{
+
+font:bold 9px verdana;
+
+color:#014094;
+
+}
+
+.precoOferta{
+
+font:10px verdana;
+
+color:#ed2124;
+
+padding:0 5px;
+
+float:left;
+
+}
+
+.precoOferta strong{
+
+font:bold 16px verdana;
+
+color:#ed2124;
+
+}
+
+.erroInput{
+
+font:bold 11px verdana;
+
+color:#710202;
+
+}
+
+td{
+
+font:bold 10px verdana;
+
+color:#014094;
+
+}
+
+td a{
+
+font:bold 9px verdana;
+
+color:#014094;
+
+text-decoration:underline;
+
+}
+
+td a:hover{
+
+text-decoration:none;
+
+}
+
+.txtTD{
+
+font:10px verdana;
+
+color:#014094;
+
+}
+
+#rolagem{
+
+padding:57px 0;
+
+}
+
+}</STYLE>
+
+<style>
+
+/* CSS Document */
+
+#rodape{
+
+float:left;
+
+margin:0 0 0 12px;
+
+_margin:0 0 0 6px;
+
+width:847px;
+
+height:65px;
+
+background:#ed2124 repeat;
+
+}
+
+#rodape .logo{
+
+float:left;
+
+padding:4px 0 0 12px;
+
+}
+
+#rodape ul li{
+
+display:inline;
+
+padding:0 0 0 20px;
+
+}
+
+#logoMc{
+
+float:left;
+
+padding:10px;
+
+}
+
+#logos{
+
+float:right;
+
+margin:10px 10px 0 0;
+
+}
+
+#rodape address{
+
+float:left;
+
+font:10px verdana;
+
+color:white;
+
+padding:10px 0 0 65px;
+
+}
+
+</style>
+
+<script>
+
+var vUrl;
+
+function fnSetUrl(pUrl) {
+
+vUrl = pUrl;
+
+}
+
+function fnChamaOfertas(pPag) {
+
+top.produtos.location=vUrl+'#'+pPag;
+
+top.menulateral.location=vUrl+'#';
+
+//top.menulateral.location="MC4_TEMPLATES.FRAME_MENULATERAL";
+
+}
+
+function mensagem(){
+
+document.getElementById('mensagem').style.display = 'none';
+
+}
+
+function boxTexto(vMsg) {
+
+if (vMsg=="") {
+
+mensagem();
+
+} else {
+
+document.getElementById('txtMensagem').innerHTML=vMsg;
+
+};
+
+}
+
+//Funçãopara bloquear caracteres especiais
+
+//Alteração realizada por Alexandre Marcelino em 12/05/2009
+
+
+
+var r={
+
+'caracters':/[/\$|,|#|~|`|\%|\*|\^|&|\(|\)|\+|\=|\[|\]|\[|\}|\{|\;|\:|\'|\"|\<|\>|\?|\||\\|\!|\$]/g
+
+
+
+
+
+}
+
+
+
+function valid(o,w){
+
+o.value = o.value.replace(r[w],'');
+
+}
+
+
+
+//-->
+
+</script>
+
+
+
+</head>
+
+<body>
+
+<div id="conteudo">
+
+<div id="mensagem">
+
+<div class="btnMensagem"><a href="javascript:mensagem();" onfocus="blur();"></a></div>
+
+<div class="erroInput" id="txtMensagem"></div>
+
+</div>
+
+<div id="forma_pagamento">
+
+<h4>Se voce e cadastrado</h4>
+
+<p>Por favor, digite seus dados para alterar seu cadastro</p>
+
+<p>
+
+<form method="post" name="cadastro" action="/login" target="_top" onsubmit="return valida_identificacao(this)">
+
+
+
+<table width="230">
+
+<tr>
+
+<td width="10">&nbsp;</td>
+
+<td width="55">e-mail:</td>
+
+<td><input name="email_login" size="30" type="text" class="input" onblur="valid(this,'caracters')"  onkeyup="valid(this,'caracters')"/></td>
+
+</tr>
+
+<tr>
+
+<td width="10">&nbsp;</td>
+
+<td width="55">&nbsp;</td>
+
+<td class="erroInput"></td>
+
+</tr>
+
+
+
+<tr>
+
+<td width="10">&nbsp;</td>
+
+<td width="55">Senha::</td>
+
+<td><input name="senha" size="30" type="password"  class="input" /></td>
+
+</tr>
+
+<tr>
+
+<td width="10">&nbsp;</td>
+
+<td width="55">&nbsp;</td>
+
+<td class="erroInput"></td>
+
+</tr>
+
+<tr>
+
+<td colspan="3" height="20">&nbsp;</td>
+
+</tr>
+
+<tr>
+
+<td width="10">&nbsp;</td>
+
+<td colspan="3" height="10" align="right">
+
+<a href="/recuperasenha">
+
+Esqueceu sua senha?
+
+</a>
+
+
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="3" height="20">&nbsp;</td>
+
+</tr>
+
+<tr>
+
+<td colspan="3" height="10" align="right">
+
+<a href="javascript: void document.cadastro.submit();">
+
+<img src="/img/btn_ok.gif" width="60" height="21" alt="OK">
+
+</a>
+
+</td>
+
+</tr>
+
+
+
+<tr>
+
+<td colspan="3" height="20">&nbsp;</td>
+
+</tr>
+
+</table>
+
+</p>
+
+</div>
+
+<div id="cartao">
+
+<h5>Ainda não se cadastrou?</h5>
+
+<p>Nunca pediu EntregaWeb? Para continuar, faca o seu cadastro.<br>E rapido e facil!</p>
+
+
+
+<a href="/cadform" target="produtos">
+
+<img src="/img/btn_queromecadastrar.gif" width="140" height="21"  alt="Quero me cadastrar">
+
+</a>
+
+</div>
+
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</form>
+
+<!-- RODAPE -->
+
+<!-- RODAPE -->
+
+<div id="rodape">
+
+<div id="logos">
+
+<ul>
+
+<li><img src="logo.png" width="84" height="47" alt="VeriSign Secored" border="0" /></li>
+
+<li><img src="logo.png" width="76" height="37" alt="Site Seguro" border="0" /></li>
+
+</ul>
+
+</div>
+
+
+
+<address>© Restaurante JeitoWeb</address>
+
+</div>
+
+</body>
+
+</html>

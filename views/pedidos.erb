@@ -1,0 +1,43 @@
+﻿<div id="conteudo"   style="margin-left:1px; margin-right:1px; width:630px;">
+
+<div id="mcofertas">
+
+<h5>Pedidos de Hoje</h4>
+<% if Bandeija.all(:confirmed=>true, :delivered=>false, :prepronto=>false)==nil %>
+<p>Nenhum pedido pendente</p>
+<% else %>
+<table style="width:100%;">
+<tr><th>COD</th><th>Cliente</th><th>Valor</th><th>F. Pagamento</th><th>Status</th><th>Confirmar</th><th>Enviar</th><th>Entregar</th></tr>
+<% Bandeija.all(:confirmed=>true, :prepronto=>false).each do |band| %>
+<%if not admin?%>
+<% if band.usuario.cepmst==@user.mst%>
+<tr><td><a href="/pedido/<%=band.id%>"><%=band.cod%></a></td>
+<td><a href="/pedido/<%=band.id%>"><%=band.usuario.nome%></a></td>
+<td><%= "%.2f" % ((Taxa.first(:id=>1).val)+band.sum) %></td>
+<td><%= band.forma %></td>
+<td><%= band.status %></td>
+<td><%=band.ackn==false ? "<a href='/confped/#{band.id}'>Confirmar</a></td>" : 'Confirmar</td>'%>
+<td><%=band.enviado==false ? "<a href='/envped/#{band.id}'>Enviar</a></td>" : 'Enviar</td>'%>
+<td><%=band.delivered==false ? "<a href='/entped/#{band.id}'>Entregar</a></td>" : 'Entregar</td>'%>
+</tr>
+<% end %>
+<%else%>
+<tr><td><a href="/pedido/<%=band.id%>"><%=band.cod%></a></td>
+<td><a href="/pedido/<%=band.id%>"><%=band.usuario.nome%></a></td>
+<td><%= "%.2f" % ((Taxa.first(:id=>1).val)+band.sum) %></td>
+<td><%= band.forma %></td>
+<td><%= band.status %></td>
+<td><%=band.ackn==false ? "<a href='/confped/#{band.id}'>Confirmar</a></td>" : 'Confirmar</td>'%>
+<td><%=band.enviado==false ? "<a href='/envped/#{band.id}'>Enviar</a></td>" : 'Enviar</td>'%>
+<td><%=band.delivered==false ? "<a href='/entped/#{band.id}'>Entregar</a></td>" : 'Entregar</td>'%>
+</tr>
+<%end%>
+<% end %>
+
+</table>
+<%end%>
+
+
+</div>
+
+</div>

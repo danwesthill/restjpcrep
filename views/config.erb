@@ -1,0 +1,74 @@
+﻿<div id="conteudo">
+<%= styled_flash %>
+<h5>Configurações Gerais</h4>
+<div id="abas">
+	<div id='selaba'>
+	<a href="/config">Geral</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config4">Pagamentos</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config2">Banners</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config5">Slides</a>
+	</div>
+</div>
+<div id="mcofertas">
+<form name="config" action="/subconfig" method="post">
+
+<p>Horário de Funcionamento</p>
+<table style="padding-left: 10px;">
+<% sem=Horario.first(:nome=>"Semana") %>
+<% sab=Horario.first(:nome=>"Sabado") %>
+<% dom=Horario.first(:nome=>"Domingo") %>
+
+<tr><td>Segundas à Sextas: </td><td>
+<input name="semin1" type="text" class="input" style="width:20px;" value="<%="%02d" % sem.inicio.hour.to_s%>"/>:
+<input name="semin2" type="text" class="input" style="width:20px;" value="<%="%02d" % sem.inicio.minute.to_s%>"/> às 
+<input name="semout1" type="text" class="input" style="width:20px;" value="<%="%02d" % sem.fim.hour.to_s%>"/>:
+<input name="semout2" type="text" class="input" style="width:20px;" value="<%="%02d" % sem.fim.minute.to_s%>"/></td></tr>
+
+<tr><td>Sábados: </td><td>
+<input name="sabin1" type="text" class="input" style="width:20px;" value="<%="%02d" % sab.inicio.hour.to_s%>"/>:
+<input name="sabin2" type="text" class="input" style="width:20px;" value="<%="%02d" % sab.inicio.minute.to_s%>"/> às 
+<input name="sabout1" type="text" class="input" style="width:20px;" value="<%="%02d" % sab.fim.hour.to_s%>"/>:
+<input name="sabout2" type="text" class="input" style="width:20px;" value="<%="%02d" % sab.fim.minute.to_s%>"/></td></tr>
+
+<tr><td>Domingos: </td><td>
+<input name="domin1" type="text" class="input" style="width:20px;" value="<%="%02d" % dom.inicio.hour.to_s%>"/>:
+<input name="domin2" type="text" class="input" style="width:20px;" value="<%="%02d" % dom.inicio.minute.to_s%>"/> às 
+<input name="domout1" type="text" class="input" style="width:20px;" value="<%="%02d" % dom.fim.hour.to_s%>"/>:
+<input name="domout2" type="text" class="input" style="width:20px;" value="<%="%02d" % dom.fim.minute.to_s%>"/></td></tr>
+<tr><td colspan=2>&nbsp;</td></tr>
+<tr><td colspan=2><input type="submit" name="button" value="Enviar"/ class="input"></td></tr>
+</table>
+
+<p>Mail</p>
+<% mail=Email.first(:id=>1) %>
+<table style="padding-left: 10px;">
+<tr><td>Domínio: </td><td><input type="text" class="input" name="domain" value="<%=mail.domain%>" style="width:300px;" /></td></tr>
+<tr><td>SMTP: </td><td><input type="text" class="input" name="smtp" value="<%=mail.smtp%>" style="width:300px;" /></td></tr>
+<tr><td>Porta: </td><td><input type="text" class="input" name="port" value="<%=mail.port%>" style="width:300px;" /></td></tr>
+<tr><td>Usuário: </td><td><input type="text" class="input" name="login" value="<%=mail.login%>" style="width:300px;" /></td></tr>
+<tr><td>Senha: </td><td><input type="text" class="input" name="senha" value="<%=mail.senha%>" style="width:300px;" /></td></tr>
+<tr><td colspan=2><input type="submit" name="b_mail" value="Enviar"/ class="input"></td></tr>
+</table>
+
+<%if @user.mst==true%>
+<% ccep=Cepmst.first(:id=>1) %>
+<p>CEPMST</p>
+<table style="padding-left: 10px;">
+<tr><td><input type="text" class="input" name="cep" value="<%=ccep.cep%>" style="width:300px;" /></td></tr>
+<tr><td><input type="submit" name="b_cep" value="Enviar"/ class="input"></td></tr>
+</table>
+<%end%>
+</form>
+
+
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</div>

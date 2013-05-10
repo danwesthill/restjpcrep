@@ -1,0 +1,297 @@
+﻿<div id="conteudo2">
+<%= styled_flash %>
+<div id="geral">
+
+<!-- BANNER CENTRAL -->
+
+<div id="bannerCentral">
+
+<h3>EntregaWeb</h3>
+
+<div id="imgCentral"><!--<a href="MC4_HORARIO_ESPECIAL" id="linkBanner">--> <!--</a>-->
+
+<img src="/img/banner1.JPG" width="846" height="219" name="SlideShow" border="0">
+
+</div>
+
+<div id="menuCentral">
+
+<div id="navCentral">
+
+<ul>
+
+<li><a href="javascript:MostraSlide(1);" onfocus="blur();">&nbsp;&nbsp;&nbsp;</a></li>
+
+<li><a href="javascript:MostraSlide(2);" onfocus="blur();">&nbsp;&nbsp;&nbsp;</a></li>
+
+<li><a href="javascript:MostraSlide(3);" onfocus="blur();">&nbsp;&nbsp;&nbsp;</a></li>
+
+<li><a href="javascript:MostraSlide(4);" onfocus="blur();">&nbsp;&nbsp;&nbsp;</a></li>
+
+<li><a href="javascript:MostraSlide(5);" onfocus="blur();">&nbsp;&nbsp;&nbsp;</a></li>
+
+<li><a href="javascript:MostraSlide(6);" onfocus="blur();">&nbsp;&nbsp;&nbsp;</a></li>
+
+
+</ul>
+
+</div>
+
+<div id="legenda"> </div>
+
+</div>
+
+</div>
+
+<!-- MENU LANCHES -->
+
+<div id="menuLanches">
+
+<ul>
+
+<% marmitas=Marmita.all(:pers=>false) %>
+<% i=1 %>
+<% marmitas[0..11].each do |marm| %>
+<% logger.info marm %>
+<li>
+
+<a href="javascript:num<%="%02d" % i%>();" onfocus="blur();">
+
+<img src="<%=marm.img%>" width="88" height="59" alt="#"/>
+
+</a>
+
+</li>
+<% i+=1 %>
+<% end %>
+
+</ul>
+
+<% i=1 %>
+<% siz=164 %>
+<% if i<7 %>
+<% siz=218 %>
+<% end %>
+<% marmitas.each do |marm| %>
+<% if i<12 %>
+<div id="num<%="%02d" % i%>" style="height:<%=siz.to_s%>px; <%=(i==1 ? 'display:block;' : '')%>"> 
+
+  <div class="imgLanches">
+
+    <img src="<%=marm.img%>" width="241" height="174" alt="#" />
+
+  </div>
+
+  <div class="titLanches"><span class="titLanches1">OfertaWeb</span>&nbsp;&nbsp;<%=marm.nome%></div>
+
+<div class="txtLanches"><%=marm.desc%></div>
+
+</div>
+<% i+=1 %>
+<% end %>
+<% end %>
+
+</div>
+
+<% if not login? %>
+
+<!-- FORMULARIO -->
+
+<div id="facapedido">
+
+<h3 style="height:25px;"><img src="img/tit_facaseupedido.gif" width="109" height="25" alt="Faca SeuPedido">&nbsp;</h3>
+
+<div id="txtFaca">
+
+<p><strong>Ja sou cadastrado e quero fazer meu pedido.</strong></p>
+
+<div id="formFaca">
+
+<form name="frmlogin" action="/login" method="POST"
+
+target="_top">
+
+<table cellpadding="0" cellspacing="0" border="0">
+
+<tr>
+
+<td colspan="2"><strong>e-mail</strong></td>
+
+</tr>
+
+<tr>
+
+<td colspan="2"><input class="input" name="email_login"
+
+type="text"   onkeyup="valid(this,'caracters')" onblur="valid(this,'caracters')" /></td>
+
+</tr>
+
+<tr>
+
+<td colspan="2" height="10">&nbsp;</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2"><strong>Senha:</strong></td>
+
+</tr>
+
+<tr>
+
+<td><input name="senha" class="input2" type="password" />
+
+<input type="hidden" name="p_chamadora"
+
+value="mc4_home_prg">
+
+<input type="hidden" name="p_idioma" value="ptg">
+
+<input type="hidden" name="p_ipseq" value="0">
+
+</td>
+
+
+
+<td width="26">
+
+<input type="image" src="/img/btn_ok.gif"
+
+alt="OK" width="26" height="16" onClick="document.frmlogin.submit();"/>
+
+</td>
+
+</tr>
+
+</form>
+
+<tr>
+
+<td colspan="3" height="10" align="right">
+
+<a href="/recuperasenha">
+
+Esqueceu sua senha?
+
+</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td colspan="2" height="10">&nbsp;</td>
+
+</tr>
+
+</table>
+
+</div>
+
+<p>Ainda não é cadastrado?</p>
+
+<p style="padding:0 0 0 10px;">
+
+<a href="/cadastrar" target="_top">
+
+<img src="/img/btn_queromecadastrar.gif" width="140" height="21"  alt="Quero me cadastrar">
+
+</a>
+
+
+
+</p>
+
+</div>
+
+</div>
+<% else %>
+<% a=0 %>
+<% if Bandeija.first(:usuario_id=>Usuario.first(:email=>username).id, :confirmed=>false, :prepronto=>false) != nil %>
+
+<% band=Bandeija.first(:usuario_id=>Usuario.first(:email=>username).id,  :confirmed=>false, :prepronto=>false) %>
+<% a=band.sum %>
+<%end%>
+<div id="minha" style="position:relative; float:left; width:300px; height:355px;">
+	<h6 style="width:96%; margin-right:0px; padding-right:0px;">Minha Bandeja</h6>
+	<div id="tabBandeja">
+
+	<table cellpadding="0" cellspacing="0" border="0">
+	<tr>
+             <td width="10" height="15"></td>
+                <td width="20" align="center" class="cesta-item-nv"></td>
+                <td width="140" class="cesta-item-nv"><strong>Valor do pedido:</strong></td>
+                <td width="32" class="cesta-item-nv">
+                  <div align="right"><strong>   <%= "%.2f" % a %></strong></div>
+    </td>
+                <td width="18"></td>
+             </tr>
+             <tr>
+                <td width="10" height="15"></td>
+                <td width="20" align="center" class="cesta-item-nv"></td>
+                <td width="140" class="cesta-item-nv"><strong>Taxa de entrega:</strong></td>
+                <td width="32" class="cesta-item-nv">
+      <div align="right"><strong>   <%= band==nil ? "0.00" : "%.2f" % Taxa.first(:id=>1).val %></strong></div>
+                </td>
+    <td width="18"></td>
+             </tr>
+    <tr>
+                <td width="10" height="15"></td>
+                <td width="20" align="center" class="cesta-item-nv"></td>
+                <td width="140" class="cesta-item-nv"><strong>Total do pedido:</strong></td>
+                <td width="32" class="cesta-item-nv">
+      <div align="right"><strong>   <%= band==nil ? "0.00" : "%.2f" % ((Taxa.first(:id=>1).val)+a) %></strong></div>
+                </td>
+               
+             </tr>
+   </table>
+   <br/>
+     </td>
+    </tr>
+
+     <tr>
+             <td>
+               <table width="100%" border="0">
+                 
+      </table>
+    </td>
+   </tr>
+    <tr>
+<% if Bandeija.first(:usuario_id=>Usuario.first(:email=>username).id, :confirmed=>false, :prepronto=>false) != nil %>
+
+<% band=Bandeija.first(:usuario_id=>Usuario.first(:email=>username).id,  :confirmed=>false, :prepronto=>false) %>
+
+<% if band.itembandeijas.size > 0 %>
+<td align="center">
+               <table cellpadding="0" cellspacing="0" border="0">
+        <tr>
+                               <td><a href="/cancelabandeija"><input type="submit" class="input" value="Cancelar" style="width:70px;"></a></td>
+                               <td><a href="/finalizabandeija"><input type="submit" class="input"  value="Finalizar" style="width:70px;"></td>
+		<td colspan=2><a href="/precadastra"><input type="submit" class="input"  value="Cadastrar" style="width:70px;"></td>
+                             </tr>
+                           </table>
+       </td> 
+</tr>
+  
+   
+<%end%>
+<%end%>
+ </table>
+</div>
+   </div>
+<% end %>
+
+</div>
+</div>
+<script>
+
+document.frmlogin.p_idioma.value='ptg';
+
+document.frmlogin.p_ipseq.value= '53286578';
+
+</script>
+
+

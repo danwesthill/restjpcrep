@@ -1,0 +1,166 @@
+﻿<div id="conteudo">
+	<h4>Diferenciar Marmita</h4>
+	<div id="mcofertas">
+
+	<% logger.info @mmid %>
+	<% marm=Marmita.first(:id=>@mmid.to_i) %>
+	<form name="form" method="POST" action="/envaltprod/<%=@mmid%>" target="_top">
+		<table width="470"  border="0" cellspacing="0" cellpadding="0">
+		<tr><td valign="top">
+			<table width="470" border="0" cellspacing="0" cellpadding="0">
+
+			<tr><td>&nbsp;</td></tr>
+
+			<tr><td><span class="texto_azul">Marmita:</span><!-- Nome -->
+			<input type="text" class="input" name="cad_nome" value="<%= marm.nome %>" /></td></tr>
+
+			<tr><td>&nbsp;</td></tr>
+
+			<tr><td><span class="texto_azul">Preço:</span><!-- Nome -->
+			<input type="text" class="input" name="cad_preco" value="<%="%.2f" % marm.preco %>" /></td></tr>
+			<tr><td>&nbsp;</td></tr>
+			
+			<tr><td><span>Imagem:</span></td></tr>
+			<tr><td><img src="<%= marm.img %>" width="159" height="91" /></td></tr>
+			<tr><td><a href="/cadimage/<%=marm.id%>" class="input" style="background:#DDF;">Alterar</td></tr>
+			<tr><td>&nbsp;</td></tr>
+			
+			<tr><td><span class="texto_azul">Descrição:</span></td></tr>
+			<tr><td><textarea name="cad_desc" class="input" value="" style="width:500px; position:relative;left:5px; height:50px;"><%=marm.desc%></textarea></td></tr>
+			<tr><td>&nbsp;</td></tr>
+			
+			<tr>
+			<td><span class="texto_azul">Principal:</span><!-- Sexo -->
+			<select name="principal" class="input">
+			<% principais=Principal.all %>
+			<% principais.each do |princ| %>
+			<option value="<%= princ.id %>" <%=(princ==marm.princicomp.principal ? "SELECTED" : "")%>><%= princ.nome %></option>
+			<% end %>
+			</select></td>
+			</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+			<tr><td><span class="texto_azul">Acompanhamentos:</span></td></tr>
+			
+			<tr><td>&nbsp;</td></tr>
+
+			<% ingredientes=Ingrediente.all %>
+			<% cont=marm.componentes.size %>
+			<input type="hidden" name="c2" value="<%=cont%>">
+			<% c2=4 %>
+			<% if cont<4 %>
+			<% c2=cont %>
+			<% end %>
+
+			<tr><td>
+			<% for i in 0..3 do %>
+			<select name="i<%=i%>" class="input">
+			<option value="0">Nenhum</option>
+			<% ingredientes.each do |item| %>
+			<% if i<c2 %>
+			<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %> ><%= item.nome %></option>
+			<%else%>
+			<option value="<%= item.nome %>" ><%= item.nome %></option>
+			<%end%>
+			<% end %>
+			</select>
+			<% end %>
+			</td></tr>
+			
+			<tr><td>&nbsp;</td></tr>
+
+			<tr><td><% c2=8 %>
+			<% if cont<8 %>
+			<% c2=cont %>
+			<% end %>
+			<% for i in 4..7 do %>
+			<select name="i<%=i%>" class="input">
+			<option value="0">Nenhum</option>
+			<% ingredientes.each do |item| %>
+			<% if i<c2 %>
+			<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %> ><%= item.nome %></option>
+			<%else%>
+			<option value="<%= item.nome %>" ><%= item.nome %></option>
+			<%end%>
+			<% end %>
+			</select>
+			<% end %>
+			</td></tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			</tr>
+
+			<tr>
+			<td>
+			<% c2=12 %>
+			<% if cont<12 %>
+			<% c2=cont %>
+			<% end %>
+			<% for i in 8..11 do %>
+			<select name="i<%=i%>" class="input">
+			<option value="0">Nenhum</option>
+			<% ingredientes.each do |item| %>
+			<% if i<c2 %>
+			<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %> ><%= item.nome %></option>
+			<%else%>
+			<option value="<%= item.nome %>" ><%= item.nome %></option>
+			<%end%>
+			<% end %>
+			</select>
+			<% end %>
+			</td></tr>
+
+			<tr>
+			<td>&nbsp;</td>
+			</tr>
+
+<tr>
+<td>
+<% c2=16 %>
+<% if cont<16 %>
+<% c2=cont %>
+<% end %>
+<% for i in 12..15 do %>
+<select name="i<%=i%>" class="input">
+<option value="0">Nenhum</option>
+<% ingredientes.each do |item| %>
+<% if i<c2 %>
+			<option value="<%= item.nome %>" <%= (marm.componentes[i].ingrediente==item ? "SELECTED" : "") %> ><%= item.nome %></option>
+			<%else%>
+			<option value="<%= item.nome %>" ><%= item.nome %></option>
+			<%end%>
+<% end %>
+</select>
+<% end %>
+</td>
+
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<input type="image" src="/img/btn_continuar.gif" width="65" height="22" border="0">
+</td>
+</tr>
+
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+<!--<div>-->
+
+</div>
+</div>

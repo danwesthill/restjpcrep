@@ -1,0 +1,34 @@
+﻿<div id="conteudo">
+<%= styled_flash %>
+<h5>Imagens de Background</h4>
+<div id="abas">
+	<div id='nselaba'>
+	<a href="/config">Geral</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config4">Pagamentos</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config2">Banners</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/config5">Slides</a>
+	</div>
+
+</div>
+<div id="mcofertas">
+
+<p>Logos</p>
+<%logo1=Campanha.first(:id=>9)%>
+<%logo2=Campanha.first(:id=>10)%>
+<table style="padding-left: 10px;">
+<tr><td>Principal</td><td><a href="/alteralogo/9">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logo1.imgg.to_s%>" style="width:424px; border:1px solid;"/></td></tr>
+<tr><td>Rodapé</td><td><a href="/alteralogo/10">Alterar</a></td></tr>
+<tr><td colspan=2><img src="<%=logo2.imgg.to_s%>" style="border:1px solid;"/></td></tr>
+</table>
+<div id="rolagem">&nbsp;</div>
+
+</div>
+
+</div>

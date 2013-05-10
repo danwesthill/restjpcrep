@@ -1,0 +1,217 @@
+<link rel="stylesheet" type="text/css" href="../geral.css" />
+
+<script language="javascript" type="text/javascript">
+
+<!--
+
+// Set slideShowSpeed (milliseconds)
+
+var slideShowSpeed = 10000
+
+// Duration of crossfade (seconds)
+
+var crossFadeDuration = 1
+
+// Specify the image files
+
+var Pic = new Array() // don't touch this
+
+var Leg = new Array() // don't touch this
+
+// to add more images, just continue
+
+// the pattern, adding to the array below
+
+
+<%slides=Slide.all%>
+<% for i in 1..6 %>
+Pic[<%=i%>] =  '<%=slides[i-1].img.to_s%>'
+<% end %>
+
+//Legenda
+
+//Leg[1] =  'Copo de Coca'
+
+
+<% for i in 1..6 %>
+Leg[<%=i%>] =  '<%=slides[i-1].texto.to_s%>'
+<% end %>
+
+var t
+
+var j = 1
+
+var p = Pic.length
+
+var pos = j
+
+var preLoad = new Array()
+
+function preLoadPic(index)
+
+{
+
+if (Pic[index] != ''){
+
+window.status='Loading : '+Pic[index]
+
+preLoad[index] = new Image()
+
+preLoad[index].src = Pic[index]
+
+Pic[index] = ''
+
+window.status=''
+
+}
+
+}
+
+
+
+function runSlideShow(){
+
+if (document.all){
+
+document.images.SlideShow.style.filter="blendTrans(duration=2)"
+
+document.images.SlideShow.style.filter= "blendTrans(duration=crossFadeDuration)"
+
+document.images.SlideShow.filters.blendTrans.Apply()
+
+}
+
+
+
+document.images.SlideShow.src = preLoad[j].src
+
+document.getElementById('legenda').innerHTML = Leg[j]
+
+if (document.all){
+
+document.images.SlideShow.filters.blendTrans.Play()
+
+}
+
+
+
+pos = j
+
+
+
+j = j + 1
+
+if (j > (p-1)) j=1
+
+t = setTimeout('runSlideShow()', slideShowSpeed)
+
+preLoadPic(j)
+
+}
+
+
+
+preLoadPic(j)
+
+
+
+// FunÃ§Ã£o controla a sequencia de slides.
+
+function MostraSlide(id){
+
+document.SlideShow.src = preLoad[id].src;
+
+document.getElementById('legenda').innerHTML = Leg[id];
+
+//if(id == 1){
+
+//   document.getElementById('linkBanner').href = 'MC4_HORARIO_ESPECIAL';
+
+//}else{
+
+//   document.getElementById('linkBanner').href = '#';
+
+//}
+
+}
+
+//funciont ChamaPagina(link){
+
+//window.href.location = "+link+";
+
+//}
+
+//-->
+
+
+
+//FunÃ§Ã£o para bloquear caracteres especiais
+
+//AlteraÃ§Ã£o realizada por Alexandre Marcelino em 12/05/2009
+
+
+
+var r={
+
+'caracters':/[/\$|,|#|~|`|\%|\*|\^|&|\(|\)|\+|\=|\[|\]|\[|\}|\{|\;|\:|\'|\"|\<|\>|\?|\||\\|\!|\$]/g
+
+}
+
+function valid(o,w){
+
+o.value = o.value.replace(r[w],'');
+
+}
+
+//-->
+
+</SCRIPT>
+
+</script>
+
+<script language="javascript" type="text/javascript">
+
+// JavaScript Document
+
+<!--
+<% marmitas=Marmita.all(:pers=>false) %>
+<% for i in 1..marmitas.size+1 %>
+function num<%="%02d" % i%>(){
+<% for k in 1..marmitas.size+1 %>
+document.getElementById('num<%="%02d" % k%>').style.display = <%= (i==k ? "'block'" : "'none'")%>;
+
+<% end %>
+}
+<% end %>
+
+function Get_Cookie( name ) {
+
+
+
+var start = document.cookie.indexOf( name + "=" );
+
+var len = start + name.length + 1;
+
+if ( ( !start ) &&
+
+( name != document.cookie.substring( 0, name.length ) ) )
+
+{
+
+return null;
+
+}
+
+if ( start == -1 ) return null;
+
+var end = document.cookie.indexOf( ";", len );
+
+if ( end == -1 ) end = document.cookie.length;
+
+return unescape( document.cookie.substring( len, end ) );
+
+}
+
+//-->
+
+</script>

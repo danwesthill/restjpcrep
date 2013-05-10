@@ -1,0 +1,199 @@
+﻿<div id="conteudo">
+<%= styled_flash %>
+<h5>Cadastrar Nova Marmita</h4>
+<div id="abas">
+	<div id='selaba'>
+	<a href="/cadprodframe" >Produto</a>
+	</div>
+	<div id='nselaba'>
+	<a href="/caditemframe" >Item</a>
+	</div>
+</div>
+<div id="mcofertas">
+
+
+
+
+
+<!-- CONTEUDO -->
+
+<!-- <div id="conteudo"> -->
+<!-- <div id="mcofertas"> -->
+
+<form name="form" method="POST" action="/envcadprod">
+<table width="470"  border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top">
+<table width="470" border="0" cellspacing="0" cellpadding="0">
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><span class="texto_azul">Nome:</span><!-- Nome -->
+<input type="text" name="cad_nome" size="55" maxlength="100" class="input" value="">
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><span class="texto_azul">Tipo:</span><!-- Nome -->
+<select name="tipo" class="input" value="">
+<option value="0">Incluir</option>
+<%Tipo.all.each do |tipo|%>
+<option value="<%=tipo.id%>"><%=tipo.nome%></option>
+<%end%>
+</select>
+</td>
+</tr>
+
+<tr>
+<td><input type="text" name="ntipo" size="55" maxlength="100" class="input" value="">
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><span class="texto_azul">Descrição:</span><!-- Nome --></td></tr>
+<tr><td><textarea name="cad_desc" class="input" value="" style="width:500px; position:relative;left:5px; height:50px;"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><span class="texto_azul">Preço:</span><!-- Nome -->
+<input type="text" name="cad_preco" size="55" maxlength="100" class="input" value="">
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td><span class="texto_azul">Principal:</span><!-- Sexo -->
+<select name="principal" class="input">
+<% principais=Principal.all %>
+<% principais.each do |princ| %>
+<option value="<%= princ.id %>"><%= princ.nome %></option>
+<% end %>
+</select></td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<span class="texto_azul">Acompanhamentos:</span>
+</td>
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<% ingredientes=Ingrediente.all %>
+
+<tr>
+<td>
+<% for i in 0..3 do %>
+<select name="i<%=i%>" class="input">
+<option value="0">Nenhum</option>
+<% ingredientes.each do |item| %>
+<option value="<%= item.nome %>"><%= item.nome %></option>
+<% end %>
+</select>
+<% end %>
+</td>
+
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<% for i in 4..7 do %>
+<select name="i<%=i%>" class="input">
+<option value="0">Nenhum</option>
+<% ingredientes.each do |item| %>
+<option value="<%= item.nome %>"><%= item.nome %></option>
+<% end %>
+</select>
+<% end %>
+</td>
+
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<% for i in 8..11 do %>
+<select name="i<%=i%>" class="input">
+<option value="0">Nenhum</option>
+<% ingredientes.each do |item| %>
+<option value="<%= item.nome %>"><%= item.nome %></option>
+<% end %>
+</select>
+<% end %>
+</td>
+
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<% for i in 12..15 do %>
+<select name="i<%=i%>" class="input">
+<option value="0">Nenhum</option>
+<% ingredientes.each do |item| %>
+<option value="<%= item.nome %>"><%= item.nome %></option>
+<% end %>
+</select>
+<% end %>
+</td>
+
+</tr>
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+
+<tr>
+<td>
+<input type="image" src="/img/btn_continuar.gif" width="65" height="22" border="0">
+</td>
+</tr>
+
+
+<tr>
+<td>&nbsp;</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+<!--</div>-->
+<!--<div>-->
+</div>
+</div>

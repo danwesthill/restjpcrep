@@ -1,0 +1,63 @@
+<div id="topo">
+<% logos=Campanha.all %>
+	<h1><a href="/"><img src="<%=logos[0].imgg%>" width="373" height="142" /></a></h1>
+	<div id="facab"><a href="/oferta"><img src="/img/faca.gif"/></a></div>
+	<h2><a href="/"><img src="<%=logos[1].imgg%>" style="width:146px; height:72px;" /></a></h2>
+
+		<div id="menu" style="display: block;">
+
+			<ul>
+
+			<li class="faca"><a href="/" target="_top"><img src="/img/btn_home.gif"></a></li>
+			<li class="como"><a href="/funcionamento" target="_top"><img src="/img/btn_comofunciona.gif"></a></li>
+			<% if login? %>
+			<li class="acompanhe"><a href="/acompanhamento" target="_top"><img src="/img/btn_acompanheseupedido.gif"></a></li>
+			<% else %>
+			<!--<li class="favorito_inativo" id="favorito_inativo" style="display: block;"></li>-->
+			<% end %>
+
+
+			<% if not login? %>
+			<!--<li class="favorito_inativo" id="favorito_inativo" style="display: block;"></li>-->
+			<li class="cadastro"><a href="/cadastrar" target="_top"><img src="/img/btn_cadastro.gif"></a></li>
+			<% else %>
+			<li class="favoritos"><a href="/favoritos" target="_top"><img src="/img/btn_pedido_pre.gif"></a></li>
+			<li class="cadastro"><a href="/cadastro" target="_top"><img src="/img/btn_cadastro.gif"></a></li>
+			<% end %>
+
+			<li class="fale"><a href="/telefones" target="_top"><img src="/img/btn_telefones.gif"></a></li>
+			<!--<li class="tabela"><a href="/tabelanutricional" target="_top"><img src="/img/btn_tabelanutricional.gif"></a></li>-->
+			</ul>
+
+		</div>
+
+	<div id="relogio" style="display: none;">
+		<div class="imgRelogio"><img src="/img/img_relogio.gif" width="45" height="45" alt="Relógio"></div>
+		<div class="txtRelogio">
+			<div class="titRelogio">Atendimento</div>
+			<div class="contRelogio"><span id="tempo">&nbsp;(minutos)*</span></div>
+
+		</div>
+
+		<div><a href="#" target="_blank"><img border="0" src="/img/img_cancelar.gif"></a></div>
+
+	</div>
+</div>
+
+<div id="mdagua" style="position:absolute; top:300; right:0px; width:110; z-index:100;"></div>
+
+<div id="#menuDivLanguage"></div>
+
+<table width="600" align="right">
+<tbody><tr><td>
+	<div id="menuLanguage">
+		<ul>
+			<li></li>
+
+		</ul>
+
+		<div class="data" id="dataext" style="width:100%;"><div style="float:left;"><%= @data %><%= (login? ? ' - Seja bem vindo, '+@user.nome+'!</div>    <div style="float:right; margin-top:-2px;"><a href="/logout" style="color:#FF0; text-align:right;"><img src="/img/sair.png" style="margin:0px; padding:0px;"/></a></div>' : '</div> <div style="float:right; margin-top:-2px;"><a href="/cadastrar" style="color:#FF0; text-align:right;"><img src="/img/entrar.png""/></a></div>') %></div>
+	</div>
+
+</td></tr></tbody></table>
+

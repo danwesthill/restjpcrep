@@ -1,0 +1,88 @@
+﻿<div id="conteudo"  style="margin-left:1px; margin-right:1px; width:630px;">
+	<%= styled_flash %>
+	<%tt=Tipo.first(:id=>@id2.to_i)%>
+	<h3 class="offtitle">Ofertas</h3>
+	<div id="abas">
+	<%Tipo.all.each do |tipo|%>
+	<div id="<%=(tipo==tt ? 'selaba' : 'nselaba')%>">
+	<a href="/oferta/t/<%=tipo.id%>"><%=tipo.nome%></a>
+	</div>
+	<%end%>
+	</div>s</h3>
+	<div id="mcofertas">
+	<form name="ofform" method="POST" action="/envofform">
+	<% a=0 %>
+	<% Marmita.all(:pers=>false , :tipo_id=>@id2.to_i)[@id.to_i*4..@id.to_i*4+3].each do |marm| %>
+		<%a+=1%>
+		<%if a==5 %>
+			<%a=0%>
+			<br class="clearfix">
+		<%end%>
+		<div class="oferta" style="width:156px;">
+
+		<h4><%= marm.nome %></h4>
+
+
+			<div class="imgOfertas">
+
+			<img src="<%= marm.img %>" width="156" height="90" />
+
+			</div>
+			
+<% @acomp=marm.princicomp.principal.nome %>
+<% marm.componentes.all.each do |comp| %>
+	<% @acomp=@acomp+" "+comp.ingrediente.nome %>
+	<% if comp!=marm.componentes.all.last %>
+		<% @acomp=@acomp+"," %>
+	<% end %>
+<% end %>
+<% logger.info @acomp %>
+			<div class="txtOferta"><%= @acomp %></div>
+			
+
+
+			<div class="qtdOferta">
+
+			<ul>
+
+
+
+
+			<li>Qtd.</li>
+
+			<li>
+
+			<input type="text" name="qtd<%= marm.id %>"class="input" value="01" size="2" maxlength="2">
+
+			</li>
+			<li><input name="dif<%= marm.id %>" type="image" width="71" height="16" src="/img/btn_diferenciado.gif" alt="Diferenciado" value="<%= marm.id %>"/></li>
+			</ul>
+
+			</div>
+
+			<div class="precoOferta">&nbsp;&nbsp;R$<strong><%= "%.2f" % marm.preco %></strong></div>
+
+			<div class="txtOferta"><input name="add<%=marm.id%>" type="image" src="/img/btn_incluirnabandeja.gif" width="132" height="20" value="<%= marm.id %>" /></div>
+		
+		</div>
+		
+		<% end %>
+		
+
+</form>
+<br class="clearfix">
+<div>
+<% if Marmita.all(:pers=>false, :tipo_id=>@id2.to_i).size+1>4*(@id.to_i+1) %>
+<% logger.info (Marmita.all(:pers=>false).size+1).to_s %>
+<% logger.info (4*(@id.to_i+1)).to_s %>
+<p style="display:inline; float:right;"><a href="/oferta/t/<%=@id2%>/<%=(@id.to_i+1).to_s%>"><img src="/img/right.png" /></a></p>
+<%end%>
+<p style="display:inline; float:right;"><a href="/oferta/t/<%=@id2%>/<%=(@id.to_i-1).to_s%>"><img src="/img/left.png" /></a></p>
+
+</div>
+
+ </div>
+
+
+
+</div>

@@ -1,0 +1,147 @@
+#lateral{
+
+width:205px;
+padding-left:2px;
+float:left;
+margin-top:0px;
+}
+
+#dados{
+
+background:#f9d954 repeat;
+
+}
+
+#dados h5{
+
+background:url(img/bg_h5.gif) repeat-x;
+
+height:21px;
+
+font:bold 12px verdana;
+
+color:#022a60;
+
+padding:5px 0 0 10px;
+
+}
+
+.titDados{
+
+padding:10px;
+
+font:14px verdana;
+
+color:#014094;
+
+}
+
+.txtDados{
+
+padding:5px 10px;
+
+font:10px verdana;
+
+color:#014094;
+
+}
+
+.txtDados a{
+
+font:bold 10px verdana;
+
+color:#014094;
+
+}
+
+.txtDados_esp{
+
+padding:10px 0 15px 10px;
+
+font:10px verdana;
+
+color:#014094;
+
+}
+
+.btnDados{
+
+padding:10px 0 20px 10px;
+
+}
+
+.btnDados ul li{
+
+display:inline;
+
+}
+
+#minha{
+
+background:#eefdc3 repeat;
+
+}
+
+#minha h6{
+
+background:url(img/bg_h6.gif) repeat-x;
+width:195px;
+height:21px;
+
+font:bold 12px verdana;
+
+color:white;
+
+padding:5px 0px 0px 10px;
+
+}
+
+#tabBandeja{
+
+padding:10px 10px 10px 10px;
+
+}
+
+#tabBandeja td{
+
+font:10px verdana;
+
+color:#014094;
+
+}
+
+#tabBandeja .titBandeja{
+
+font:bold 10px verdana;
+
+color:#ed2124;
+
+}
+
+.tdb{
+
+padding:10px;
+
+font:11px verdana;
+
+color:#014094;
+
+}
+
+.thb{
+
+padding:10px;
+
+font:bold 11px verdana;
+
+color:#014094;
+
+}
+
+
+#logosInt{
+
+float:left;
+
+}
+
